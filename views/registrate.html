@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <!-- hoja de stylos bootstrap -->
+  <link type="text/css" rel="stylesheet" href="../vendors/materialize/css/materialize.min.css"/>
+  <!-- hoja de stylo css -->
+  <link rel="stylesheet" type="text/css" href="../css/main.css">
+  <title>Red Social</title>
+</head>
+<body>
+
+    <form class="container">
+      <div class="row">
+
+        <div class="col s8 offset-s2">
+          <div class="">
+            <h4>Nuevo usuario  </h4>
+          </div>
+          <div class="input-field col s6">
+            <input  type="text" class="validate">
+            <label> Nombre</label>
+          </div>
+          <div class="input-field col s6">
+            <input  type="text" class="validate">
+            <label for="first_name">Apellido</label>
+          </div>
+          <div class="input-field col s12">
+            <input  type="text" class="validate">
+            <label >correo Electronico</label>
+          </div>
+          <div class="input-field col s12">
+            <input  type="password" class="validate">
+            <label >contraseña</label>
+          </div>
+          <div class="input-field col s3">
+            <input  type="number" class="validate">
+            <label >dia</label>
+          </div>
+          <div class="input-field col s6">
+            <select>
+              <option value="" disabled selected>mes</option>
+              <option >enero</option>
+              <option >febrero</option>
+              <option >marzo</option>
+            </select>
+          </div>
+          <div class="input-field col s3">
+            <input  type="number" class="validate">
+            <label >año</label>
+          </div>
+          <a class="waves-effect waves-light btn">Iniciar Sesion</a>
+          <div class="">
+            <p>¿Ya tienes una cuenta? <a href="iniciarSesion.html">Iniciar sesión</a></p>
+          </div>
+          <div class="">
+            <p>Acepto las <a href="#">Condiciones</a> y la <a href="#">Privacidad</a> de </p>
+          </div>
+        </div>
+      </div>
+    </form>
+
+
+  <script type="text/javascript" src="../vendors/materialize/js/jquery.js"></script>
+  <script type="text/javascript" src="../vendors/materialize/js/materialize.min.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/4.8.1/firebase.js"></script>
+  <script type="text/javascript" src="../js/app.js"></script>
+</body>
+</html>
