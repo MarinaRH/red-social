@@ -1,3 +1,6 @@
+$(document).ready(function(){
+
+
 // Initialize Firebase
 var config = {
   apiKey: "AIzaSyDKNjzBbhY9GG9XAwbjig7_zk6DnjySntw",
@@ -11,3 +14,7 @@ firebase.initializeApp(config);
 var holaMundo = document.getElementById('holaMundo')
 var dbRef = firebase.database().ref().child('text');
 dbRef.on('value', snap => holaMundo.innerText = snap.val() );
+
+
+
+})
