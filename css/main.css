@@ -1,6 +1,14 @@
 /* header */
+.img-logo {
+  width: 30vh;
+}
+
+nav {
+  height: 90px;
+}
 .nav-wrapper {
-  background: linear-gradient(to bottom right, rgb(6, 132, 141)20%, rgb(186, 236, 104));
+  background: linear-gradient(to bottom right, rgb(208, 236, 83) 1%, rgb(245, 38, 107));
+  padding: 7px 21px;
 }
 
 .inline {
@@ -39,12 +47,12 @@
   font-size: 16px;
   color: rgb(68, 95, 97);
   cursor: pointer;
-  padding: 18px;
+  padding: 20px;
 }
 
 .icon-public:hover {
-  font-size: 21px;
-  color: rgb(55, 247, 234);
+  font-size: 22px;
+  color: rgb(248, 42, 93);
 }
 
 #input {
