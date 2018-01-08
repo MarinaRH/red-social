@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <!-- hoja de stylos bootstrap -->
+  <link type="text/css" rel="stylesheet" href="../vendors/materialize/css/materialize.min.css"/>
+  <!-- hoja de stylo css -->
+  <link rel="stylesheet" type="text/css" href="../css/main.css">
+  <title>Red Social</title>
+</head>
+<body>
+
+  <article >
+    <div >
+      <img src="" alt="logo">
+    </div>
+
+    <div class="container">
+      <div class="row">
+        <div class="col s7 hide-on-small-only">
+          <p>Con Yahoo es muy sencillo disfrutar de todas las cosas que más te importan.
+          El mejor correo electrónico con Yahoo Mail, noticias de última hora locales, nacionales e internacionales, finanzas, deportes, música, películas y mucho más. Sacarás mucho más partido de Internet, ¡y también de tu vida!
+          </p>
+        </div>
+        <div class="col s10 offset-s1 col m5">
+          <!-- formulario de inicio de sesion -->
+          <form>
+            <h5 class="center-align">INICIAR SESION</h5>
+            <div class="input-field ">
+              <input  id="email" type="text" class="validate">
+              <label>correo electronico</label>
+            </div>
+            <div class="input-field">
+              <input id="password" type="password" class="validate">
+              <label>password</label>
+            </div>
+
+            <a id="btnLogIn" class="waves-effect waves-light btn">Iniciar Sesion</a>
+            <div class="">
+              <p>
+                <input type="checkbox" class="filled-in" id="filled-in-box" checked="checked" />
+                <label for="filled-in-box"><a href="#">No cerrar sesion</a></label>
+              </p>
+              <a href="#">¿Tienes problemas para iniciar sesión?</a>
+
+            </div>
+          </form>
+        </div>
+     </div>
+    </div>
+  </article>
+
+
+  <script type="text/javascript" src="../vendors/jquery/jquery-3.2.1.min.js"></script>
+  <script type="text/javascript" src="../vendors/materialize/js/materialize.min.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/4.8.1/firebase.js"></script>
+  <script type="text/javascript" src="../js/app.js"></script>
+</body>
+</html>

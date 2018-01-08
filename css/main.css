@@ -1,3 +1,4 @@
+
 /* header */
 .img-logo {
   width: 30vh;
@@ -71,3 +72,23 @@ nav {
 #publicacion {
   margin-top:18px;
 }
+
+.img-fondo {
+  background-image: url("../assets/images/listo.jpg");
+  background-repeat: no-repeat;
+  background-position: bottom;
+  background-size: cover;
+  height: 100vh;
+}
+
+.logo-size {
+  width: 200px;
+}
+
+/*.buttons {
+  transform: translateY(1350%);
+}
+
+.buttons a {
+  border: 1px solid;
+}*/
