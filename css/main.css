@@ -1,0 +1,30 @@
+.inline {
+  display: inline;
+}
+
+.post {
+  background-color: rgb(224, 217, 217);
+  padding: 18px 7px;
+  border: white 1px solid;
+}
+
+.post-text {
+  border: none;
+  margin-top: 21px;
+}
+
+.icon {
+  color: rgb(197, 196, 196);
+  font-size: 21px;
+  padding: 0 14px;
+}
+
+/* add friends */
+.img-perfil {
+  width: 60px;
+}
+
+.icon-btn {
+  border: none;
+  background-color: inherit;
+}
