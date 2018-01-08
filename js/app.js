@@ -9,11 +9,43 @@ var config = {
 };
 
 firebase.initializeApp(config);
+<<<<<<< HEAD
 
 
 var holaMundo = document.getElementById('holaMundo')
 var dbRef = firebase.database().ref().child('text');
 dbRef.on('value', snap => holaMundo.innerText = snap.val() );
+=======
+var ShowComment = function(e){
+  $('#btn-text').on('click',function(e){
+    var texto = $('#new-text').val();
+    $('#publicacion').append('<div id="public-header" class="col s12 m12"><div class="col s2 m2"><img src="../assets/images/perfil1.jpg" alt="" class="circle img-perfil"></div><div class="col s10 m10">Mario Belmont</div><div class="col s12 m12 divider"></div></div><div id="public-body" class="col s12 m12"><div class="text-public"><p>'+ texto +'</p></div><div class=" col s12 m12 divider"></div></div><div class="col s12 m12"><a><i class="fa fa-thumbs-o-up icon-public"></i></a><a href="#" id="icon-comment"><i class="fa fa-edit icon-public"></i></a><a><i class="fa fa-share icon-public"></i></a><div class="col s12 m12"><input id="input" placeholder="Add a comment.." type="text"></div></div>');
+
+    // objDb.publicacion.push({
+    //    		text: texto
+    //    	})
+    //    guardarDatos(objDb);
+  })
+}
+ShowComment();
+
+$('a#icon-comment').on('click',function(){
+  $('input').addClass('blue');
+});
+
+var guardarDatos =(publicacion)=>{
+ 	database.ref("/").set(publicacion);
+ }
+var database = firebase.database();
+// Leer datos: Usar el método .on('value')
+database.ref("/publicacion").on('value', (snapshot)=>{
+	let publicacion = snapshot.val();
+	objDb.publicacion = publicacion;
+	ShowComment(publicacion);
+});
+});
+
+>>>>>>> 7664ebcd406e8481a0758b557fa5909239d5f2ab
 
 // inicializar formulario materialize
 $(document).ready(function() {
@@ -23,21 +55,87 @@ $(document).ready(function() {
   var $btnCreate = $('#btnCreate');
   var $emailCreate = $('#emailCreate');
   var $passwordCreate = $('#passwordCreate');
+  var $firstName = $('#firstName');
+  var $lastName = $('#lastName');
+  var $day = $('#day');
+  var $año = $('#año');
+  var $passwordCreate = $('#passwordCreate');
+
   // variables iniciar sesion
   var $btnLogIn = $('#btnLogIn');
   var $email = $('#email');
   var $password = $('#password');
 
-
   $btnCreate.on('click', createNewUsers);
   $btnLogIn.on('click', logIn);
+  $firstName.on('keyup', validateName);
+  $firstName.on('keyup', validatingNewUsers);
+  $lastName.on('keyup', validateLastName);
+  $lastName.on('keyup', validatingNewUsers);
+  $emailCreate.on('keyup', validateEmail);
+  $emailCreate.on('keyup', validatingNewUsers);
+  $day.on('keyup', validateDay);
+  $day.on('keyup', validatingNewUsers);
+  $año.on('keyup', validateAño);
+  $año.on('keyup', validatingNewUsers);
+  $email.on('keyup',validSingUp);
+  $password.on('keyup',validSingUp);
 
-  // crear nuevo usuario
+  // validando nombre de usuario
+  function validateName() {
+    var name = false;
+    var regex = /^[a-zA-Z]*$/;
+    if (regex.test($($firstName).val()) && $firstName.val().length >= 3) {
+       name = true;
+     }
+    return name;
+  }
+
+  // validando apellidos
+  function validateLastName() {
+     var name = false;
+     var regex = /^[a-zA-Z]*$/;
+     if (regex.test($($lastName).val()) && $lastName.val().length >= 3) {
+         name = true;
+     }
+     return name;
+  }
+
+  // validando email
+  function validateEmail() {
+    var email = false;
+    var regex = (/^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:.[a-zA-Z0-9-]+)*$/);
+    if (regex.test($($emailCreate).val()) && $emailCreate.val().length > 6) {
+      email = true;
+      localStorage.email = $emailCreate.val();
+    }
+    return email;
+  }
+
+  function validateDay() {
+    localStorage.password = $passwordCreate.val();
+    return $day.val().length == 2
+  }
+
+  function validateAño() {
+    return $año.val().length == 4
+  }
+
+  // validando formulario de crear nuevo usuario
+  function validatingNewUsers() {
+
+    if (validateName() && validateLastName() && validateEmail() && validateDay() && validateAño()) {
+      $btnCreate.removeClass('disabled');
+    }
+  }
+
+
+  // crear nuevo usuario con firebase
    function createNewUsers() {
-     firebase.auth().createUserWithEmailAndPassword($emailCreate.val(), $passwordCreate.val()).then(function(){
+     firebase.auth().createUserWithEmailAndPassword($emailCreate.val(), $passwordCreate.val())
+     .then(function(){
        verifyUsers();
      })
-
 
      .catch(function(error) {
       // Handle Errors here.
@@ -46,17 +144,28 @@ $(document).ready(function() {
       // ...
       console.log(errorCode);
       console.log(errorMessage);
+      alert(errorMessage);
     });
   }
+
+  // validando inicio de sesion
+  function validSingUp() {
+    if ($email.val() === localStorage.email && $password.val() == localStorage.password ) {
+      $btnLogIn.removeClass('disabled');
+    }
+  }
+
     // iniciar sesion
   function logIn() {
-    firebase.auth().signInWithEmailAndPassword($email.val(), $password.val()).catch(function(error) {
+    alert('Iniciando sesion....');
+    firebase.auth().signInWithEmailAndPassword($email.val(), $password.val())
+    .catch(function(error) {
         // Handle Errors here.
       var errorCode = error.code;
       var errorMessage = error.message;
-        // ...
         console.log(errorCode);
         console.log(errorMessage);
+        alert(errorMessage);
       });
     }
 
@@ -65,6 +174,7 @@ $(document).ready(function() {
       if (user) {
         // User is signed in.
         console.log('el usuario a iniciado sesion');
+
         var displayName = user.displayName;
         var email = user.email;
         var emailVerified = user.emailVerified;
@@ -81,17 +191,18 @@ $(document).ready(function() {
   }
   observer();
 
+ // enviando correo de verificacion de email
   function verifyUsers() {
     var user = firebase.auth().currentUser;
-
     user.sendEmailVerification().then(function() {
       // Email sent.
       console.log('enviando correo');
+      alert('Registro exitoso')
+      alert('enviando correo de verificacion')
     }).catch(function(error) {
       // An error happened.
       console.log(error);
     });
-
   }
 
 

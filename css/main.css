@@ -108,10 +108,11 @@ nav {
   width: 200px;
 }
 
-/*.buttons {
-  transform: translateY(1350%);
+.form {
+  box-shadow: 5px 5px #888888;
+  padding: 20px 5px;
 }
 
-.buttons a {
-  border: 1px solid;
-}*/
+.logo-img {
+  width: 15vh;
+}
