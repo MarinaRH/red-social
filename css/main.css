@@ -1,3 +1,26 @@
+/* index */
+.gradient {
+  background: linear-gradient(to bottom right, rgba(208, 236, 83, 0.534) 5%, rgba(245, 38, 107, 0.589));
+}
+
+.vh100 {
+  height: 100vh;
+}
+
+.container-flex-column {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 2em;
+}
+
+.img-index {
+  width:60vh;
+}
+
+.img-load {
+  width:30vh;
+}
 
 /* header */
 .img-logo {
