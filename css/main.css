@@ -1,4 +1,4 @@
-/* index */
+/* index vista splash*/
 .gradient {
   background: linear-gradient(to bottom right, rgba(208, 236, 83, 0.534) 5%, rgba(245, 38, 107, 0.589));
 }
@@ -62,7 +62,7 @@ nav {
 /* add friends */
 .img-perfil {
   width: 60px;
-  border-radius: 70px;
+  border-radius: 7px;
 }
 
 .icon-btn {
