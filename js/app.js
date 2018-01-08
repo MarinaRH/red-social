@@ -31,7 +31,12 @@ $(document).ready(function() {
 
   // crear nuevo usuario
    function createNewUsers() {
-     firebase.auth().createUserWithEmailAndPassword($emailCreate.val(), $passwordCreate.val()).catch(function(error) {
+     firebase.auth().createUserWithEmailAndPassword($emailCreate.val(), $passwordCreate.val()).then(function(){
+       verifyUsers();
+     })
+
+
+     .catch(function(error) {
       // Handle Errors here.
       var errorCode = error.code;
       var errorMessage = error.message;
@@ -72,6 +77,19 @@ $(document).ready(function() {
     });
   }
   observer();
+
+  function verifyUsers() {
+    var user = firebase.auth().currentUser;
+
+    user.sendEmailVerification().then(function() {
+      // Email sent.
+      console.log('enviando correo');
+    }).catch(function(error) {
+      // An error happened.
+      console.log(error);
+    });
+
+  }
 
 
 
