@@ -1,3 +1,8 @@
+/* header */
+.nav-wrapper {
+  background: linear-gradient(to bottom right, rgb(6, 132, 141)20%, rgb(186, 236, 104));
+}
+
 .inline {
   display: inline;
 }
@@ -27,4 +32,22 @@
 .icon-btn {
   border: none;
   background-color: inherit;
+}
+
+/* add publicacion */
+.icon-public {
+  font-size: 16px;
+  color: rgb(68, 95, 97);
+  cursor: pointer;
+  padding: 18px;
+}
+
+.icon-public:hover {
+  font-size: 21px;
+  color: rgb(55, 247, 234);
+}
+
+#input {
+  border: 1px solid rgb(172, 170, 170);
+  border-radius: 10px;
 }

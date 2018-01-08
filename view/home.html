@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <!-- hoja de stylos bootstrap -->
+  <!-- hoja de stylos materialize -->
   <link type="text/css" rel="stylesheet" href="../vendors/materialize/css/materialize.min.css"/>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
   <!-- hoja de stylo css -->
@@ -100,36 +100,20 @@
         </div>
         <div class="col s12 m8">
           <div>
-            <textarea  class="post-text" placeholder="Whats in your mind today?"></textarea>
+            <form id="new-publicacion">
+              <textarea id="new-text" class="post-text" placeholder="Whats in your mind today?"></textarea>
+            </form>
             <div class="post">
-              <button type="button" class="btn right">Post</button>
+              <button id="btn-text"  type="submit" class="btn right">Post</button>
               <ul>
                 <li class="inline"><a href="#"><i class="fa fa-map-marker icon"></i></a></li>
                 <li class="inline"><a href="#"><i class="fa fa-camera icon "></i></a></li>
-                <li class="inline" ><a href="#"><i class="fa fa-film icon"></i></a></li>
+                <li class="inline"><a href="#"><i class="fa fa-film icon"></i></a></li>
                 <li class="inline"><a href="#"><i class="fa fa-microphone icon"></i></a></li>
               </ul>
             </div>
           </div>
           <div id="publicacion">
-            <div id="public-header" class="col s12 m12">
-              <div class="col s2 m2">
-                <img src="../assets/images/perfil1.jpg" alt="" class="circle  img-perfil">
-              </div>
-              <div class="col s10 m10">name
-              </div>
-              <div class="col s12 m12 divider"></div>
-            </div>
-            <div id="public-body" class="col s12 m12">
-              <div class="text-public"></div>
-              <div class=" col s12 m12 divider"></div>
-            </div>
-            <div class="col s12 m12">
-              <i class="fa fa-share left"></i>
-              <i class="fa fa-thumbs-o-up left"></i>
-              <span class="right">likes </span>
-              <span class="right"> comments</span>
-            </div>
           </div>
         </div>
       </div>
