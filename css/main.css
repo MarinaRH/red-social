@@ -16,7 +16,7 @@ nav {
 }
 
 .post {
-  background-color: rgb(224, 217, 217);
+  background-color: rgb(243, 237, 237);
   padding: 18px 7px;
   border: white 1px solid;
 }
@@ -27,19 +27,27 @@ nav {
 }
 
 .icon {
-  color: rgb(197, 196, 196);
+  color: rgb(141, 136, 136);
   font-size: 21px;
   padding: 0 14px;
 }
-
+/* main */
+.content-body {
+  margin-top: 28px;
+}
 /* add friends */
 .img-perfil {
   width: 60px;
+  border-radius: 70px;
 }
 
 .icon-btn {
   border: none;
   background-color: inherit;
+}
+
+#btn-text {
+  background: linear-gradient(to bottom right, rgb(208, 236, 83) 1%, rgb(245, 38, 107));
 }
 
 /* add publicacion */
@@ -58,4 +66,8 @@ nav {
 #input {
   border: 1px solid rgb(172, 170, 170);
   border-radius: 10px;
+}
+
+#publicacion {
+  margin-top:18px;
 }
