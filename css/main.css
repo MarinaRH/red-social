@@ -96,12 +96,22 @@ nav {
   background: linear-gradient(to bottom right, rgb(208, 236, 83) 1%, rgb(245, 38, 107));
 }
 
+.img-emogi {
+  width: 5%;
+}
+
+.img-comment {
+  width: 50px;
+  border-radius: 7px;
+}
+
 /* add publicacion */
+
 .icon-public {
-  font-size: 16px;
-  color: rgb(68, 95, 97);
+  font-size: 18px;
+  color: rgb(63, 95, 97);
   cursor: pointer;
-  padding: 20px;
+  padding: 16px;
 }
 
 .icon-public:hover {
@@ -109,15 +119,26 @@ nav {
   color: rgb(248, 42, 93);
 }
 
-#input-comment {
+#input-comment, #input-com {
   border: 1px solid rgb(172, 170, 170) !important;
   border-radius: 10px !important;
+}
+
+#number-likes {
+  color: #2c6151;
+}
+.img-publicacion {
+  height: 40vh;
+  width: 100%;
 }
 
 #publicacion {
   margin-top:18px;
 }
 
+.group-icon {
+  margin-top: -15px;
+}
 .img-fondo {
   background-image: url("../assets/images/listo.jpg");
   background-repeat: no-repeat;
