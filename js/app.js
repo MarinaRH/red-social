@@ -50,7 +50,7 @@ $(document).ready(function() {
     var name = false;
     var regex = /^[a-zA-Z]*$/;
     if (regex.test($($firstName).val()) && $firstName.val().length >= 3) {
-       name = true;
+      name = true;
      }
     return name;
   }
@@ -95,13 +95,13 @@ $(document).ready(function() {
 
 
   // crear nuevo usuario con firebase
-   function createNewUsers() {
-     firebase.auth().createUserWithEmailAndPassword($emailCreate.val(), $passwordCreate.val())
-     .then(function(){
-       verifyUsers();
-     })
+  function createNewUsers() {
+    firebase.auth().createUserWithEmailAndPassword($emailCreate.val(), $passwordCreate.val())
+    .then(function(){
+      verifyUsers();
+    })
 
-     .catch(function(error) {
+    .catch(function(error) {
       // Handle Errors here.
       var errorCode = error.code;
       var errorMessage = error.message;
@@ -192,25 +192,13 @@ function getTime() {
   return hh + ':' + ((mm < 10 ? '0' : '') + mm);
 }
 
-  
-
-$("#input-comment").keypress(function( event ) {
+$("#input-comment").keypress(function(event) {
   if ( event.which == 13 ) {
-     event.preventDefault();
-     alert("Ha pulsado la tecla enter");
+    event.preventDefault();
+    alert("Ha pulsado la tecla enter");
   }
 });
 
-
-
 //**********************************+ fin de funciones para home
-
-
-
-
-
-
-
-
 
 });
