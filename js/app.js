@@ -192,7 +192,7 @@ function getTime() {
   return hh + ':' + ((mm < 10 ? '0' : '') + mm);
 }
 
-$("#input-comment").keypress(function(event) {
+$('#input-comment').keypress(function(event) {
   if ( event.which == 13 ) {
     event.preventDefault();
     alert("Ha pulsado la tecla enter");

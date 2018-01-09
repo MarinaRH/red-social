@@ -30,7 +30,7 @@
 
 .info-login {
   color: #5e5c5c;
-  font-size: 16px;
+  font-size: 18px;
 }
 
 /* header */
@@ -109,9 +109,9 @@ nav {
   color: rgb(248, 42, 93);
 }
 
-#input {
-  border: 1px solid rgb(172, 170, 170);
-  border-radius: 10px;
+#input-comment {
+  border: 1px solid rgb(172, 170, 170) !important;
+  border-radius: 10px !important;
 }
 
 #publicacion {
