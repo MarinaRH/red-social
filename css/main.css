@@ -22,6 +22,17 @@
   width:30vh;
 }
 
+/* vista de login */
+.bg-login {
+  background: linear-gradient(to bottom right, rgba(208, 236, 83, 0.534) 5%, rgba(245, 38, 107, 0.589));
+  padding: 31px;
+}
+
+.info-login {
+  color: #5e5c5c;
+  font-size: 16px;
+}
+
 /* header */
 .img-logo {
   width: 30vh;
@@ -117,11 +128,6 @@ nav {
 
 .logo-size {
   width: 200px;
-}
-
-.form {
-  box-shadow: 5px 5px #888888;
-  padding: 20px 5px;
 }
 
 .logo-img {
