@@ -90,23 +90,15 @@ $(document).ready(function() {
   // validando formulario de crear nuevo usuario
   function validatingNewUsers() {
     if (validateName() && validateLastName() && validateEmail() && validateDay() && validateAño()) {
-      // $btnCreate.removeClass('disabled');
+      $btnCreate.removeClass('disabled');
     }
   }
-
-   // crear nuevo usuarios
-  function createNewUsers() {
-    firebase.auth().createUserWithEmailAndPassword($emailCreate.val(), $passwordCreate.val())
-    .then(function(){
-      verifyUsers();
-    })
-  }
-
 
   // crear nuevo usuario con firebase
   function createNewUsers() {
     firebase.auth().createUserWithEmailAndPassword($emailCreate.val(), $passwordCreate.val())
     .then(function(){
+      $btnCreate.removeClass('disabled');
       verifyUsers();
     })
 
@@ -123,143 +115,106 @@ $(document).ready(function() {
 
 
  // iniciar sesion
-function logIn() {
-
- firebase.auth().signInWithEmailAndPassword($email.val(), $password.val())
- .catch(function(error) {
-     // Handle Errors here.
-   var errorCode = error.code;
-   var errorMessage = error.message;
-     console.log(errorCode);
-     console.log(errorMessage);
-     alert(errorMessage);
-   });
- }
-
-
-
- function observer() {
-   firebase.auth().onAuthStateChanged(function(user) {
-     var $photoProfile = $('#photoProfile');
-     var $nameUsers = $('#nameUsers');
-     var $coments = $('#coments');
-     var $usersComent = $('#usersComent');
-
-     var $dataPhoto = data["anacarlavegam@gmail.com"]["friends"];
-
-
-     if (user) {
-       // User is signed in.
-       console.log('usuario activo');
-      //  toShow();
-       var displayName = user.displayName;
-       var email = user.email;
-       console.log(email);
-       var emailVerified = user.emailVerified;
-       console.log(emailVerified);
-       var photoURL = user.photoURL;
-       console.log(photoURL);
-       var isAnonymous = user.isAnonymous;
-       var uid = user.uid;
-       console.log(uid);
-       var providerData = user.providerData;
-       console.log(providerData);
-
-       $photoProfile.attr('src', photoURL);
-       $coments.attr('src', photoURL);
-       $nameUsers.text(displayName);
-       $usersComent.text(displayName);
-
-       var $nameFriend = $('#nameFriend');
-       var $photoFriend = $('#friend');
-
-        debugger
-         for (var i = 0; i < Object.keys(data).length; i++) {
-           if (Object.keys(data)[i] === user.email ) {
-             for (var j = 0; j < $dataPhoto.length; j++){
-               $photoFriend.attr('src', $dataPhoto[j].photo);
-               $nameFriend.text($dataPhoto[j].name);
-             }
-
-           }
-        }
-
-  //
-     } else {
-
-       console.log('no existe usuario activo');
-     }
-   });
- }
- observer();
-
-
-var user = null;
-var usuariosConectados = null;
-var database = firebase.database();
-var conectadoKey = '';
-
-
-var $btnGoogle = $('#btnGoogle');
-
-$btnGoogle.on('click', logInGoogle);
-$(window).on('unload', singOut);
-
-function logInGoogle() {
-  var provider = new firebase.auth.GoogleAuthProvider();
-  firebase.auth().signInWithPopup(provider).then(function(result) {
-
-   user = result.user;
-  console.log(user);
-  debugger
-
-  initApp();
-});
-}
-
-function initApp() {
-
-  usuariosConectados = database.ref('/connected');
-  login(user.uid, user.displayName || user.email);
-
-}
-
-
-
-function login(uid, name) {
-  debugger
-  var conectado = usuariosConectados.push({
-    uid: uid,
-    name: name
-  });
-
-  conectadoKey = conectado.key;
-  console.log(conectadoKey);
-}
-
-function singOut() {
-  database.ref('/connected/' + conectadoKey).remove();
-}
-
-
- // ***************************validando login con users de Data
-
-  $('#password').on('input',function(){
-    for (i = 0 ; i < data.length; i++) {
-      if (data[i].password === $('#password').val()) {
-        $btnLogIn.removeClass('disabled');
-      }
-    }
-  })
-
-
-  for (i = 0 ; i < data.length; i++) {
-    if (data[i].email === localStorage.email) {
-     // var imagen = data[i].img;
-     $('.name-perfil').text(data[i].name);
-     // $('.img-perfil').attr('src', data[i].img);
-    }
+  function logIn() {
+    firebase.auth().signInWithEmailAndPassword($email.val(), $password.val())
+    .catch(function(error) {
+      // Handle Errors here.
+      var errorCode = error.code;
+      var errorMessage = error.message;
+      console.log(errorCode);
+      console.log(errorMessage);
+      alert(errorMessage);
+    });
   }
+
+  function observer() {
+      firebase.auth().onAuthStateChanged(function(user) {
+        var $photoProfile = $('#photoProfile');
+        var $nameUsers = $('#nameUsers');
+        var $coments = $('#coments');
+        var $usersComent = $('#usersComent');
+        var $dataPhoto = data["anacarlavegam@gmail.com"]["friends"];
+
+
+      if (user) {
+        // User is signed in.
+        console.log('usuario activo');
+        //  toShow();
+        var displayName = user.displayName;
+        var email = user.email;
+        console.log(email);
+        var emailVerified = user.emailVerified;
+        console.log(emailVerified);
+        var photoURL = user.photoURL;
+        console.log(photoURL);
+        var isAnonymous = user.isAnonymous;
+        var uid = user.uid;
+        console.log(uid);
+        var providerData = user.providerData;
+        console.log(providerData);
+
+        $photoProfile.attr('src', photoURL);
+        $coments.attr('src', photoURL);
+        $nameUsers.text(displayName);
+        $usersComent.text(displayName);
+
+        var $nameFriend = $('#nameFriend');
+        var $photoFriend = $('#friend');
+
+        for (var i = 0; i < Object.keys(data).length; i++) {
+          if (Object.keys(data)[i] === user.email ) {
+            for (var j = 0; j < $dataPhoto.length; j++){
+              $photoFriend.attr('src', $dataPhoto[j].photo);
+              $nameFriend.text($dataPhoto[j].name);
+            }
+          }
+        }
+      } else {
+        console.log('no existe usuario activo');
+      }
+    });
+  }
+  observer();
+
+
+  var user = null;
+  var usuariosConectados = null;
+  var database = firebase.database();
+  var conectadoKey = '';
+
+
+  var $btnGoogle = $('#btnGoogle');
+
+  $btnGoogle.on('click', logInGoogle);
+  $(window).on('unload', singOut);
+
+  function logInGoogle() {
+    var provider = new firebase.auth.GoogleAuthProvider();
+    firebase.auth().signInWithPopup(provider).then(function(result) {
+      user = result.user;
+      console.log(user);
+      initApp();
+    });
+  }
+
+  function initApp() {
+    usuariosConectados = database.ref('/connected');
+    login(user.uid, user.displayName || user.email);
+  }
+
+  function login(uid, name) {
+    var conectado = usuariosConectados.push({
+      uid: uid,
+      name: name
+    });
+    conectadoKey = conectado.key;
+    console.log(conectadoKey);
+  }
+
+  function singOut() {
+    database.ref('/connected/' + conectadoKey).remove();
+  }
+
   // ****************************funciones para home
   // para agregar amigos
   $('#btn-add').on('click',function(e){
@@ -282,7 +237,7 @@ function singOut() {
       var texto = $newPost.val();
       $newPost.val('');
       observer();
-      $('#publicacion').append('<div id="public-header" class="col s12 m12 white"><div class="col s2 m2 white"><img  id="coments" alt="" class=" img-perfil"></div><div id="usersComent" class="col s10 m10 white"><br><span class="grey-text">Publicado a las :'+getTime()+'</span><br></div><div class="col s12 m12 divider"></div></div><div id="public-body" class="col s12 m12 white"><div class="text-public"><p>'+ texto +'</p></div></div><div class="col s12 m12 white"><a><i class="fa fa-thumbs-o-up icon-public" id="icon-like"></i></a><a href="#"><i class="fa fa-edit icon-public"></i></a><a><i class="fa fa-share icon-public"></i></a><p class="right grey-text" id="number-likes"> likes</p><div class="col s12 m12 divider"></div><br><br><div id="add-comment" class="col s12 m12"></div></div>');
+      $('#publicacion').append('<div id="public-header" class="col s12 m12 white"><div class="col s2 m2 white"><img  id="coments" alt="" class="img-perfil"></div><div id="usersComent" class="col s10 m10 white"><br><span class="grey-text">Publicado a las :'+getTime()+'</span><br></div><div class="col s12 m12 divider"></div></div><div id="public-body" class="col s12 m12 white"><div class="text-public"><p>'+ texto +'</p></div></div><div class="col s12 m12 white"><a><i class="fa fa-thumbs-o-up icon-public" id="icon-like"></i></a><a href="#"><i class="fa fa-edit icon-public"></i></a><a><i class="fa fa-share icon-public"></i></a><p class="right grey-text" id="number-likes"> likes</p><div class="col s12 m12 divider"></div><br><br><div id="add-comment" class="col s12 m12"></div></div>');
 
       $('#input-comment').removeClass('hide');
       $btnPost.attr('disabled', true);
@@ -291,7 +246,7 @@ function singOut() {
   }
   ShowPublic();
 
-// Función para agregar hora
+  // Función para agregar hora
   function getTime() {
     var currentDate = new Date();
     var hh = currentDate.getHours();
@@ -321,7 +276,7 @@ function singOut() {
   });
 
   $('#friend-active').on('click',function(e){
-    $('.active').toggleClass('hide');
+    $('.actives').toggleClass('hide');
   })
 
  //**********************************+ fin de funciones para home

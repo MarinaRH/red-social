@@ -128,6 +128,9 @@ nav {
 }
 
 /* add publicacion */
+#new-publicacion {
+  background: white;
+}
 
 .icon-public {
   font-size: 20px;
@@ -175,11 +178,13 @@ nav {
   width: 200px;
 }
 
-
-.active {
+.actives {
   position:absolute;
-  border: red 1px solid;
   bottom: 5px;
-  right: 5px;
+  right: 2px;
   position: fixed;
+  padding: 14px;
+  border: white solid 1px !important;
+  background: white;
 }
+
