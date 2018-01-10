@@ -1,18 +1,17 @@
 // Initialize Firebase
-
-
- var config = {
-   apiKey: "AIzaSyAMwb8xeaU4tRKNGyfPWA6uH9K7Im9BJNk",
-   authDomain: "red-social-9232b.firebaseapp.com",
-   databaseURL: "https://red-social-9232b.firebaseio.com",
-   projectId: "red-social-9232b",
-   storageBucket: "red-social-9232b.appspot.com",
-   messagingSenderId: "900037571899"
- };
- firebase.initializeApp(config);
+var config = {
+  apiKey: "AIzaSyAMwb8xeaU4tRKNGyfPWA6uH9K7Im9BJNk",
+  authDomain: "red-social-9232b.firebaseapp.com",
+  databaseURL: "https://red-social-9232b.firebaseio.com",
+  projectId: "red-social-9232b",
+  storageBucket: "red-social-9232b.appspot.com",
+  messagingSenderId: "900037571899"
+};
+firebase.initializeApp(config);
 
 // inicializar formulario materialize
 $(document).ready(function() {
+
   $('select').material_select();
 
   // variables crear nuevo usuario
@@ -60,12 +59,12 @@ $(document).ready(function() {
 
   // validando apellidos
   function validateLastName() {
-     var name = false;
-     var regex = /^[a-zA-Z]*$/;
-     if (regex.test($($lastName).val()) && $lastName.val().length >= 3) {
-       name = true;
-     }
-     return name;
+    var name = false;
+    var regex = /^[a-zA-Z]*$/;
+    if (regex.test($($lastName).val()) && $lastName.val().length >= 3) {
+      name = true;
+    }
+    return name;
   }
 
   // validando email
@@ -90,7 +89,6 @@ $(document).ready(function() {
 
   // validando formulario de crear nuevo usuario
   function validatingNewUsers() {
-
     if (validateName() && validateLastName() && validateEmail() && validateDay() && validateAño()) {
       // $btnCreate.removeClass('disabled');
     }
@@ -102,6 +100,7 @@ $(document).ready(function() {
     .then(function(){
       verifyUsers();
     })
+  }
 
 
   // crear nuevo usuario con firebase
@@ -325,10 +324,5 @@ function singOut() {
     $('.active').toggleClass('hide');
   })
 
-
-//**********************************+ fin de funciones para home
-
-
-
-
+ //**********************************+ fin de funciones para home
 });
