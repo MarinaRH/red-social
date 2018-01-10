@@ -207,6 +207,13 @@ $('#input-comment, #input-com').keypress(function(event) {
   }
 });
 
+$('#icon-like').on('click',function(e){
+  var cont=1;
+  $(this).toggleClass('pink-text');
+  $('#contador').html(cont +'like'); 
+  cont++;
+});
+
 //**********************************+ fin de funciones para home
 
 });
