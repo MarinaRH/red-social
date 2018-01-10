@@ -1,51 +1,13 @@
 // Initialize Firebase
-var config = {
-  apiKey: "AIzaSyDKNjzBbhY9GG9XAwbjig7_zk6DnjySntw",
-  authDomain: "red-social-mayoristas.firebaseapp.com",
-  databaseURL: "https://red-social-mayoristas.firebaseio.com",
-  projectId: "red-social-mayoristas",
-  storageBucket: "",
-  messagingSenderId: "961495248539"
-};
-
-firebase.initializeApp(config);
-<<<<<<< HEAD
-
-
-var holaMundo = document.getElementById('holaMundo')
-var dbRef = firebase.database().ref().child('text');
-dbRef.on('value', snap => holaMundo.innerText = snap.val() );
-=======
-var ShowComment = function(e){
-  $('#btn-text').on('click',function(e){
-    var texto = $('#new-text').val();
-    $('#publicacion').append('<div id="public-header" class="col s12 m12"><div class="col s2 m2"><img src="../assets/images/perfil1.jpg" alt="" class="circle img-perfil"></div><div class="col s10 m10">Mario Belmont</div><div class="col s12 m12 divider"></div></div><div id="public-body" class="col s12 m12"><div class="text-public"><p>'+ texto +'</p></div><div class=" col s12 m12 divider"></div></div><div class="col s12 m12"><a><i class="fa fa-thumbs-o-up icon-public"></i></a><a href="#" id="icon-comment"><i class="fa fa-edit icon-public"></i></a><a><i class="fa fa-share icon-public"></i></a><div class="col s12 m12"><input id="input" placeholder="Add a comment.." type="text"></div></div>');
-
-    // objDb.publicacion.push({
-    //    		text: texto
-    //    	})
-    //    guardarDatos(objDb);
-  })
-}
-ShowComment();
-
-$('a#icon-comment').on('click',function(){
-  $('input').addClass('blue');
-});
-
-var guardarDatos =(publicacion)=>{
- 	database.ref("/").set(publicacion);
- }
-var database = firebase.database();
-// Leer datos: Usar el método .on('value')
-database.ref("/publicacion").on('value', (snapshot)=>{
-	let publicacion = snapshot.val();
-	objDb.publicacion = publicacion;
-	ShowComment(publicacion);
-});
-});
-
->>>>>>> 7664ebcd406e8481a0758b557fa5909239d5f2ab
+ var config = {
+   apiKey: "AIzaSyAMwb8xeaU4tRKNGyfPWA6uH9K7Im9BJNk",
+   authDomain: "red-social-9232b.firebaseapp.com",
+   databaseURL: "https://red-social-9232b.firebaseio.com",
+   projectId: "red-social-9232b",
+   storageBucket: "red-social-9232b.appspot.com",
+   messagingSenderId: "900037571899"
+ };
+ firebase.initializeApp(config);
 
 // inicializar formulario materialize
 $(document).ready(function() {
@@ -60,14 +22,17 @@ $(document).ready(function() {
   var $day = $('#day');
   var $año = $('#año');
   var $passwordCreate = $('#passwordCreate');
+  var $container = $('#container');
 
   // variables iniciar sesion
   var $btnLogIn = $('#btnLogIn');
   var $email = $('#email');
   var $password = $('#password');
 
-  $btnCreate.on('click', createNewUsers);
-  $btnLogIn.on('click', logIn);
+  // var $close = $('#close');
+
+  // $btnCreate.on('click', createNewUsers);
+  // $btnLogIn.on('click', logIn);
   $firstName.on('keyup', validateName);
   $firstName.on('keyup', validatingNewUsers);
   $lastName.on('keyup', validateLastName);
@@ -78,8 +43,10 @@ $(document).ready(function() {
   $day.on('keyup', validatingNewUsers);
   $año.on('keyup', validateAño);
   $año.on('keyup', validatingNewUsers);
-  $email.on('keyup',validSingUp);
-  $password.on('keyup',validSingUp);
+
+  // $email.on('keyup',validSingUp);
+  // $password.on('keyup',validSingUp);
+
 
   // validando nombre de usuario
   function validateName() {
@@ -96,7 +63,7 @@ $(document).ready(function() {
      var name = false;
      var regex = /^[a-zA-Z]*$/;
      if (regex.test($($lastName).val()) && $lastName.val().length >= 3) {
-         name = true;
+       name = true;
      }
      return name;
   }
@@ -114,111 +81,178 @@ $(document).ready(function() {
 
   function validateDay() {
     localStorage.password = $passwordCreate.val();
-    return $day.val().length == 2
+    return $day.val().length == 2;
   }
 
   function validateAño() {
-    return $año.val().length == 4
+    return $año.val().length == 4;
   }
 
   // validando formulario de crear nuevo usuario
   function validatingNewUsers() {
 
     if (validateName() && validateLastName() && validateEmail() && validateDay() && validateAño()) {
-      $btnCreate.removeClass('disabled');
+      // $btnCreate.removeClass('disabled');
     }
   }
 
+   // crear nuevo usuarios
+  function createNewUsers() {
+    firebase.auth().createUserWithEmailAndPassword($emailCreate.val(), $passwordCreate.val())
+    .then(function(){
+      verifyUsers();
+    })
 
-  // crear nuevo usuario con firebase
-   function createNewUsers() {
-     firebase.auth().createUserWithEmailAndPassword($emailCreate.val(), $passwordCreate.val())
-     .then(function(){
-       verifyUsers();
-     })
-
-     .catch(function(error) {
-      // Handle Errors here.
-      var errorCode = error.code;
-      var errorMessage = error.message;
-      // ...
-      console.log(errorCode);
-      console.log(errorMessage);
-      alert(errorMessage);
-    });
-  }
-
-  // validando inicio de sesion
-  function validSingUp() {
-    if ($email.val() === localStorage.email && $password.val() == localStorage.password ) {
-      $btnLogIn.removeClass('disabled');
-    }
-  }
-
-    // iniciar sesion
-  function logIn() {
-    alert('Iniciando sesion....');
-    firebase.auth().signInWithEmailAndPassword($email.val(), $password.val())
     .catch(function(error) {
-        // Handle Errors here.
-      var errorCode = error.code;
-      var errorMessage = error.message;
-        console.log(errorCode);
-        console.log(errorMessage);
-        alert(errorMessage);
-      });
-    }
+     // Handle Errors here.
+     var errorCode = error.code;
+     var errorMessage = error.message;
+     // ...
+     console.log(errorCode);
+     console.log(errorMessage);
+     alert(errorMessage);
+   });
+ }
 
-  function observer() {
-    firebase.auth().onAuthStateChanged(function(user) {
-      if (user) {
-        // User is signed in.
-        console.log('el usuario a iniciado sesion');
+ // iniciar sesion
+function logIn() {
 
-        var displayName = user.displayName;
-        var email = user.email;
-        var emailVerified = user.emailVerified;
-        var photoURL = user.photoURL;
-        var isAnonymous = user.isAnonymous;
-        var uid = user.uid;
-        var providerData = user.providerData;
-        // ...
-      } else {
-
-        console.log('el usuario esta desconectado');
-      }
-    });
-  }
-  observer();
-
- // enviando correo de verificacion de email
-  function verifyUsers() {
-    var user = firebase.auth().currentUser;
-    user.sendEmailVerification().then(function() {
-      // Email sent.
-      console.log('enviando correo');
-      alert('Registro exitoso')
-      alert('enviando correo de verificacion')
-    }).catch(function(error) {
-      // An error happened.
-      console.log(error);
-    });
-  }
+ firebase.auth().signInWithEmailAndPassword($email.val(), $password.val())
+ .catch(function(error) {
+     // Handle Errors here.
+   var errorCode = error.code;
+   var errorMessage = error.message;
+     console.log(errorCode);
+     console.log(errorMessage);
+     alert(errorMessage);
+   });
+ }
 
 
 
-  
+ function observer() {
+   firebase.auth().onAuthStateChanged(function(user) {
+     var $photoProfile = $('#photoProfile');
+     var $nameUsers = $('#nameUsers');
+     var $coments = $('#coments');
+     var $usersComent = $('#usersComent');
+
+     var $dataPhoto = data["anacarlavegam@gmail.com"]["friends"];
+
+
+     if (user) {
+       // User is signed in.
+       console.log('usuario activo');
+      //  toShow();
+       var displayName = user.displayName;
+       var email = user.email;
+       console.log(email);
+       var emailVerified = user.emailVerified;
+       console.log(emailVerified);
+       var photoURL = user.photoURL;
+       console.log(photoURL);
+       var isAnonymous = user.isAnonymous;
+       var uid = user.uid;
+       console.log(uid);
+       var providerData = user.providerData;
+       console.log(providerData);
+
+       $photoProfile.attr('src', photoURL);
+       $coments.attr('src', photoURL);
+       $nameUsers.text(displayName);
+       $usersComent.text(displayName);
+
+       var $nameFriend = $('#nameFriend');
+       var $photoFriend = $('#friend');
+
+        debugger
+         for (var i = 0; i < Object.keys(data).length; i++) {
+           if (Object.keys(data)[i] === user.email ) {
+             for (var j = 0; j < $dataPhoto.length; j++){
+               $photoFriend.attr('src', $dataPhoto[j].photo);
+               $nameFriend.text($dataPhoto[j].name);
+             }
+
+           }
+        }
+
+  //
+     } else {
+
+       console.log('no existe usuario activo');
+     }
+   });
+ }
+ observer();
+
+
+var user = null;
+var usuariosConectados = null;
+var database = firebase.database();
+var conectadoKey = '';
+
+
+var $btnGoogle = $('#btnGoogle');
+
+$btnGoogle.on('click', logInGoogle);
+$(window).on('unload', singOut);
+
+function logInGoogle() {
+  var provider = new firebase.auth.GoogleAuthProvider();
+  firebase.auth().signInWithPopup(provider).then(function(result) {
+
+   user = result.user;
+  console.log(user);
+  debugger
+
+  initApp();
+});
+}
+
+function initApp() {
+
+  usuariosConectados = database.ref('/connected');
+  login(user.uid, user.displayName || user.email);
+
+}
+
+
+
+function login(uid, name) {
+  debugger
+  var conectado = usuariosConectados.push({
+    uid: uid,
+    name: name
+  });
+
+  conectadoKey = conectado.key;
+  console.log(conectadoKey);
+}
+
+function singOut() {
+  database.ref('/connected/' + conectadoKey).remove();
+}
+
+
+
+
 
 
 // *************************************funciones para home
 var ShowPublic = function(e){
   $('#btn-text').on('click',function(e){
+
+    observer();
+
     var texto = $('#new-text').val();
     $('#new-text').val('');
-    $('#publicacion').append('<div id="public-header" class="col s12 m12"><div class="col s2 m2"><img src="../assets/images/perfil1.jpg" alt="" class="circle img-perfil"></div><div class="col s10 m10">Mario Belmont<br><span class="grey-text">Publicado a las :'+getTime()+'</span></div><div class="col s12 m12 divider"></div></div><div id="public-body" class="col s12 m12"><div class="text-public"><p>'+ texto +'</p></div><div class=" col s12 m12 divider"></div></div><div class="col s12 m12"><a><i class="fa fa-thumbs-o-up icon-public"></i></a><a href="#"><i class="fa fa-edit icon-public"></i></a><a><i class="fa fa-share icon-public"></i></a><div id="add-comment" class="col s12 m12"></div><div class="col s12 m12"><input id="input-comment" placeholder="Add a comment.." type="text"></div></div>');
+    $('#publicacion').append('<div id="public-header" class="col s12 m12"><div class="col s2 m2"><img  id="coments"  alt="" class="circle img-perfil"></div><div id="usersComent" class="col s10 m10 "><br><span class="grey-text">Publicado a las :'+getTime()+'</span></div><div class="col s12 m12 divider"></div></div><div id="public-body" class="col s12 m12"><div class="text-public"><p>'+ texto +'</p></div><div class=" col s12 m12 divider"></div></div><div class="col s12 m12"><a><i class="fa fa-thumbs-o-up icon-public"></i></a><a href="#"><i class="fa fa-edit icon-public"></i></a><a><i class="fa fa-share icon-public"></i></a><div id="add-comment" class="col s12 m12"></div><div class="col s12 m12"><input id="input-comment" placeholder="Add a comment.." type="text"></div></div>');
+
+
   })
 }
 ShowPublic();
+
 
 // Función para agregar fecha
 function getTime() {
@@ -228,7 +262,6 @@ function getTime() {
   return hh + ':' + ((mm < 10 ? '0' : '') + mm);
 }
 
-  
 
 $("#input-comment").keypress(function( event ) {
   if ( event.which == 13 ) {
@@ -238,14 +271,7 @@ $("#input-comment").keypress(function( event ) {
 });
 
 
-
 //**********************************+ fin de funciones para home
-
-
-
-
-
-
 
 
 
