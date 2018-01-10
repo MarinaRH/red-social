@@ -1,3 +1,6 @@
+* {
+  font-family: 'Roboto', sans-serif;
+}
 /* index vista splash*/
 .gradient {
   background: linear-gradient(to bottom right, rgba(208, 236, 83, 0.534) 5%, rgba(245, 38, 107, 0.589));
@@ -51,7 +54,7 @@ nav {
 }
 
 .post {
-  background-color: rgb(243, 237, 237);
+  background-color: rgba(243, 237, 237, 0.644);
   padding: 18px 7px;
   border: white 1px solid;
 }
@@ -62,10 +65,16 @@ nav {
 }
 
 .icon {
-  color: rgb(141, 136, 136);
+  color: rgb(58, 78, 77);
   font-size: 21px;
   padding: 0 14px;
 }
+
+.icon:hover {
+  color:rgb(206, 53, 130);
+  font-size: 23px;
+}
+
 /* main */
 .content-body {
   margin-top: 28px;
@@ -82,6 +91,13 @@ nav {
   background-color: inherit;
 }
 
+#btn-friend {
+  background: rgba(209, 70, 140, 0.616);
+  padding: 7px;
+  border-radius: 7px;
+  color: white;
+}
+
 .input-search{
   border: 1px solid rgb(172, 172, 172) !important;
   border-radius: 7px !important;
@@ -92,7 +108,7 @@ nav {
   bottom: 50px;
 }
 
-#btn-text {
+.btn-grad {
   background: linear-gradient(to bottom right, rgb(208, 236, 83) 1%, rgb(245, 38, 107));
 }
 
@@ -106,7 +122,9 @@ nav {
 }
 
 /* add publicacion */
-
+.border-public {
+  border-left: 1px solid black !important;
+}
 .icon-public {
   font-size: 20px;
   color: rgb(63, 95, 97);

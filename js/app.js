@@ -175,10 +175,26 @@ $(document).ready(function() {
 
 
 // *************************************funciones para home
+
+$('#btn-add').on('click',function(e){
+  e.preventDefault();
+  $('#btn-add').addClass('hide');
+  $('#btn-friend').removeClass('hide');
+})
+
+
+var $btnPost=$('#btn-text');
+var $newPost=$('#new-text');
+
+$newPost.on('input',function(){
+  $btnPost.attr('disabled', false);
+  $btnPost.addClass('btn-grad');
+})
+
 var ShowPublic = function(e){
-  $('#btn-text').on('click',function(e){
-    var texto = $('#new-text').val();
-    $('#new-text').val('');
+  $btnPost.on('click',function(e){
+    var texto = $newPost.val();
+    $newPost.val('');
     $('#publicacion').append('<div id="public-header" class="col s12 m12"><div class="col s2 m2"><img src="../assets/images/perfil1.jpg" alt="" class="circle img-perfil"></div><div class="col s10 m10">Mario Belmont<br><span class="grey-text">Publicado a las :'+getTime()+'</span></div><div class="col s12 m12 divider"></div></div><div id="public-body" class="col s12 m12"><div class="text-public"><p>'+ texto +'</p></div></div><div class="col s12 m12"><a><i class="fa fa-thumbs-o-up icon-public" id="icon-like"></i></a><a href="#"><i class="fa fa-edit icon-public"></i></a><a><i class="fa fa-share icon-public"></i></a><p class="right" id="number-likes">37 likes</p><div class="col s12 m12 divider"></div><br><br><div id="add-comment" class="col s12 m12"></div></div>');
 
     $('#input-comment').removeClass('hide');

@@ -6,6 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <!-- hoja de stylos materialize -->
   <link type="text/css" rel="stylesheet" href="../vendors/materialize/css/materialize.min.css"/>
+  <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
   <!-- hoja de stylo css -->
   <link rel="stylesheet" type="text/css" href="../css/main.css">
@@ -59,7 +60,8 @@
                   <p>Ana Mendoza</p>
                 </div>
                 <div class="col s3">
-                  <button class="icon-btn"><i class="fa fa-user-plus icon"></i></button>
+                  <button id="btn-add" class="icon-btn"><i class="fa fa-user-plus icon"></i></button>
+                  <button id="btn-friend" class="icon-btn hide">Amigos</button>
                 </div>           
               </div>
               <div class="divider"></div>
@@ -71,7 +73,8 @@
                   <p>Rossi Rodriguez Guevara</p>
                 </div>
                 <div class="col s3">
-                  <button class="icon-btn"><i class="fa fa-user-plus icon"></i></button>
+                  <button id="btn-add" class="icon-btn"><i class="fa fa-user-plus icon"></i></button>
+                  <button id="btn-friend" class="icon-btn hide">Amigos</button>
                 </div>           
               </div>
               <div class="divider"></div>
@@ -83,7 +86,8 @@
                   <p>Carla Nuñez Pinto</p>
                 </div>
                 <div class="col s3">
-                  <button class="icon-btn"><i class="fa fa-user-plus icon"></i></button>
+                  <button id="btn-add" class="icon-btn"><i class="fa fa-user-plus icon"></i></button>
+                  <button id="btn-friend" class="icon-btn hide">Amigos</button>
                 </div>           
               </div>
               <div class="divider"></div>
@@ -137,7 +141,7 @@
               <textarea id="new-text" class="post-text" placeholder="Whats in your mind today?"></textarea>
             </form>
             <div class="post">
-              <button id="btn-text"  type="submit" class="btn right">Post</button>
+              <button id="btn-text"  type="submit" class="btn right" disabled>Post</button>
               <ul>
                 <li class="inline"><a href="#"><i class="fa fa-map-marker icon"></i></a></li>
                 <li class="inline"><a href="#"><i class="fa fa-camera icon "></i></a></li>
@@ -146,12 +150,12 @@
               </ul>
             </div>
           </div>
-          <div id="publicacion">
+          <div id="publicacion" class="border-public">
           </div>
           <div class="col s12 m12 ">
             <input id="input-comment" placeholder="Add a comment.." type="text" class="hide">
           </div>
-          <div>
+          <div class="border-public">
             <div id="public-header" class="col s12 m12">
               <div class="col s2 m2">
                 <img src="../assets/images/etnika.png" alt="" class=" img-perfil">
