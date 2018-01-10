@@ -179,7 +179,7 @@ var ShowPublic = function(e){
   $('#btn-text').on('click',function(e){
     var texto = $('#new-text').val();
     $('#new-text').val('');
-    $('#publicacion').append('<div id="public-header" class="col s12 m12"><div class="col s2 m2"><img src="../assets/images/perfil1.jpg" alt="" class="circle img-perfil"></div><div class="col s10 m10">Mario Belmont<br><span class="grey-text">Publicado a las :'+getTime()+'</span></div><div class="col s12 m12 divider"></div></div><div id="public-body" class="col s12 m12"><div class="text-public"><p>'+ texto +'</p></div></div><div class="col s12 m12"><a><i class="fa fa-thumbs-o-up icon-public"></i></a><a href="#"><i class="fa fa-edit icon-public"></i></a><a><i class="fa fa-share icon-public"></i></a><div id="add-comment" class="col s12 m12"></div></div>');
+    $('#publicacion').append('<div id="public-header" class="col s12 m12"><div class="col s2 m2"><img src="../assets/images/perfil1.jpg" alt="" class="circle img-perfil"></div><div class="col s10 m10">Mario Belmont<br><span class="grey-text">Publicado a las :'+getTime()+'</span></div><div class="col s12 m12 divider"></div></div><div id="public-body" class="col s12 m12"><div class="text-public"><p>'+ texto +'</p></div></div><div class="col s12 m12"><a><i class="fa fa-thumbs-o-up icon-public" id="icon-like"></i></a><a href="#"><i class="fa fa-edit icon-public"></i></a><a><i class="fa fa-share icon-public"></i></a><p class="right" id="number-likes">37 likes</p><div class="col s12 m12 divider"></div><br><br><div id="add-comment" class="col s12 m12"></div></div>');
 
     $('#input-comment').removeClass('hide');
   })
@@ -194,13 +194,16 @@ function getTime() {
   return hh + ':' + ((mm < 10 ? '0' : '') + mm);
 }
 
-$('#input-comment').keypress(function(event) {
+$('#input-comment, #input-com').keypress(function(event) {
   if ( event.which == 13 ) {
     event.preventDefault();
     // alert("Ha pulsado la tecla enter");
     var comentario = $('#input-comment').val();
+    var comentar=$('#input-com').val();
     $('#input-comment').val('');
-    $('#add-comment').append('<p>'+comentario+'</p>');
+    $('#input-com').val('');
+    $('#add-comment').append('<div class="col s1 m1"><img src="../assets/images/perfil1.jpg" alt="" class="img-comment"></div> <p class="col s11 m11 ">'+comentario+'<span  class="right grey-text">publicado : '+getTime()+'</span></p>');
+    $('#add-com').append('<div class="col s1 m1"><img src="../assets/images/perfil1.jpg" alt="" class="img-comment"></div> <p class="col s11 m11 ">'+comentar+'<span  class="right grey-text">publicado : '+getTime()+'</span></p>');
   }
 });
 
