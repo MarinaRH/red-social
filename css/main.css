@@ -149,6 +149,7 @@ nav {
 #number-likes {
   color: #2c6151;
 }
+
 .img-publicacion {
   height: 40vh;
   width: 100%;
@@ -176,4 +177,12 @@ nav {
 
 .logo-img {
   width: 15vh;
+}
+
+.active {
+  position:absolute;
+  border: red 1px solid;
+  bottom: 5px;
+  right: 5px;
+  position: fixed;
 }

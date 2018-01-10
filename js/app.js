@@ -181,12 +181,10 @@ $(document).ready(function() {
 
   
   for (i = 0 ; i < data.length; i++) {
-    if (data[i].email === $('#email').val()) {
-    
+    if (data[i].email === localStorage.email) {
      // var imagen = data[i].img;
      $('.name-perfil').text(data[i].name);
      // $('.img-perfil').attr('src', data[i].img);
-
     }
   }
   // ****************************funciones para home
@@ -248,7 +246,9 @@ $(document).ready(function() {
     cont++;
   });
 
-
+  $('#friend-active').on('click',function(e){
+    $('.active').toggleClass('hide');
+  })
   
 
  //**********************************+ fin de funciones para home
