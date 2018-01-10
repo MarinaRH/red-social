@@ -75,7 +75,7 @@ $(document).ready(function() {
     }
     return email;
   }
-
+  
   function validateDay() {
     localStorage.password = $passwordCreate.val();
     return $day.val().length == 2
@@ -169,69 +169,88 @@ $(document).ready(function() {
     });
   }
 
+ // ***************************validando login con users de Data
+
+  $('#password').on('input',function(){
+    for (i = 0 ; i < data.length; i++) {
+      if (data[i].password === $('#password').val()) {
+        $btnLogIn.removeClass('disabled');
+      }
+    }
+  })
+
+  
+  for (i = 0 ; i < data.length; i++) {
+    if (data[i].email === $('#email').val()) {
+    
+     // var imagen = data[i].img;
+     $('.name-perfil').text(data[i].name);
+     // $('.img-perfil').attr('src', data[i].img);
+
+    }
+  }
+  // ****************************funciones para home
+  // para agregar amigos
+  $('#btn-add').on('click',function(e){
+    $('#btn-add').addClass('hide');
+    $('#btn-friend').removeClass('hide');
+  });
+
+  
+  // habilitar boton para publicar
+  var $btnPost=$('#btn-text');
+  var $newPost=$('#new-text');
+  $newPost.on('input',function(){
+    $btnPost.attr('disabled', false);
+    $btnPost.addClass('btn-grad');
+  });
+
+  // funcion para agregar publicaciones
+  var ShowPublic = function(e){
+    $btnPost.on('click',function(e){
+      var texto = $newPost.val();
+      $newPost.val('');
+      $('#publicacion').append('<div id="public-header" class="col s12 m12 white"><div class="col s2 m2 white"><img src="../assets/images/perfil1.jpg" alt="" class=" img-perfil"></div><div class="col s10 m10 white">Maria Belmont<br><span class="grey-text">Publicado a las :'+getTime()+'</span><br></div><div class="col s12 m12 divider"></div></div><div id="public-body" class="col s12 m12 white"><div class="text-public"><p>'+ texto +'</p></div></div><div class="col s12 m12 white"><a><i class="fa fa-thumbs-o-up icon-public" id="icon-like"></i></a><a href="#"><i class="fa fa-edit icon-public"></i></a><a><i class="fa fa-share icon-public"></i></a><p class="right grey-text" id="number-likes"> likes</p><div class="col s12 m12 divider"></div><br><br><div id="add-comment" class="col s12 m12"></div></div>');
+
+      $('#input-comment').removeClass('hide');
+      $btnPost.attr('disabled', true);
+      $btnPost.removeClass('btn-grad');
+    })
+  }
+  ShowPublic();
+
+// Función para agregar hora
+  function getTime() {
+    var currentDate = new Date();
+    var hh = currentDate.getHours();
+    var mm = currentDate.getMinutes();
+    return hh + ':' + ((mm < 10 ? '0' : '') + mm);
+  }
+  // comentar las publicaciones
+  $('#input-comment, #input-com').keypress(function(event) {
+    if ( event.which == 13 ) {
+      event.preventDefault();
+      // alert("Ha pulsado la tecla enter");
+      var comentario = $('#input-comment').val();
+      var comentar=$('#input-com').val();
+      $('#input-comment').val('');
+      $('#input-com').val('');
+      $('#add-comment').append('<div class="col s1 m1"><img src="../assets/images/perfil1.jpg" alt="" class="img-comment"></div> <p class="col s11 m11 ">'+comentario+'<span  class="right grey-text">publicado : '+getTime()+'</span></p>');
+      $('#add-com').append('<div class="col s1 m1"><img src="../assets/images/perfil1.jpg" alt="" class="img-comment"></div> <p class="col s11 m11 ">'+comentar+'<span  class="right grey-text">publicado : '+getTime()+'</span></p>');
+    }
+  });
+  
+  // contador para likes
+  $('#icon-like').on('click',function(e){
+    var cont=1;
+    $(this).toggleClass('pink-text');
+    $('#contador').html(cont +'like'); 
+    cont++;
+  });
 
 
   
 
-
-// *************************************funciones para home
-
-$('#btn-add').on('click',function(e){
-
-  $('#btn-add').addClass('hide');
-  $('#btn-friend').removeClass('hide');
-})
-
-
-var $btnPost=$('#btn-text');
-var $newPost=$('#new-text');
-
-$newPost.on('input',function(){
-  $btnPost.attr('disabled', false);
-  $btnPost.addClass('btn-grad');
-})
-
-var ShowPublic = function(e){
-  $btnPost.on('click',function(e){
-    var texto = $newPost.val();
-    $newPost.val('');
-    $('#publicacion').append('<div id="public-header" class="col s12 m12 white"><div class="col s2 m2 white"><img src="../assets/images/perfil1.jpg" alt="" class=" img-perfil"></div><div class="col s10 m10 white">Mario Belmont<br><span class="grey-text">Publicado a las :'+getTime()+'</span><br></div><div class="col s12 m12 divider"></div></div><div id="public-body" class="col s12 m12 white"><div class="text-public"><p>'+ texto +'</p></div></div><div class="col s12 m12 white"><a><i class="fa fa-thumbs-o-up icon-public" id="icon-like"></i></a><a href="#"><i class="fa fa-edit icon-public"></i></a><a><i class="fa fa-share icon-public"></i></a><p class="right" id="number-likes">37 likes</p><div class="col s12 m12 divider"></div><br><br><div id="add-comment" class="col s12 m12"></div></div>');
-
-    $('#input-comment').removeClass('hide');
-    $btnPost.attr('disabled', true);
-    $btnPost.removeClass('btn-grad');
-  })
-}
-ShowPublic();
-
-// Función para agregar fecha
-function getTime() {
-  var currentDate = new Date();
-  var hh = currentDate.getHours();
-  var mm = currentDate.getMinutes();
-  return hh + ':' + ((mm < 10 ? '0' : '') + mm);
-}
-
-$('#input-comment, #input-com').keypress(function(event) {
-  if ( event.which == 13 ) {
-    event.preventDefault();
-    // alert("Ha pulsado la tecla enter");
-    var comentario = $('#input-comment').val();
-    var comentar=$('#input-com').val();
-    $('#input-comment').val('');
-    $('#input-com').val('');
-    $('#add-comment').append('<div class="col s1 m1"><img src="../assets/images/perfil1.jpg" alt="" class="img-comment"></div> <p class="col s11 m11 ">'+comentario+'<span  class="right grey-text">publicado : '+getTime()+'</span></p>');
-    $('#add-com').append('<div class="col s1 m1"><img src="../assets/images/perfil1.jpg" alt="" class="img-comment"></div> <p class="col s11 m11 ">'+comentar+'<span  class="right grey-text">publicado : '+getTime()+'</span></p>');
-  }
-});
-
-$('#icon-like').on('click',function(e){
-  var cont=1;
-  $(this).toggleClass('pink-text');
-  $('#contador').html(cont +'like'); 
-  cont++;
-});
-
-//**********************************+ fin de funciones para home
+ //**********************************+ fin de funciones para home
 
 });

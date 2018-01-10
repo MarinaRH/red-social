@@ -18,14 +18,18 @@
       <div class="nav-wrapper">
         <img src="../assets/images/logo.png" alt=""class="brand-logo left img-logo">
         <li class="right show-on-small hide-on-large-only">
-          <a href="perfil.html" >Perfil
-            <img src="../assets/images/perfil1.jpg" class=" img-perfil">
+          <a href="perfil.html" >
+            <span class="name-perfil left">Name</span>
+            <img src="../assets/images/perfil3.jpg" class="img-perfil">
           </a>
         </li>
         <ul class="right hide-on-med-and-down">
           <li>
-            <a href="perfil.html" >Mario Belmont
-              <img src="../assets/images/perfil1.jpg" class=" img-perfil">
+            <span class="name-perfil">Name</span>
+          </li>
+          <li>
+            <a href="perfil.html" >
+              <img src="../assets/images/perfil3.jpg" class=" img-perfil">
             </a>
           </li>
           <li>
@@ -61,7 +65,7 @@
                 </div>
                 <div class="col s3">
                   <button id="btn-add" class="icon-btn"><i class="fa fa-user-plus icon"></i></button>
-                  <button id="btn-friend" class="icon-btn hide">Amigos</button>
+                  <button id="btn-friend" class="icon-btn hide gradient">Amigos</button>
                 </div>           
               </div>
               <div class="divider"></div>
@@ -176,7 +180,7 @@
               <a><i class="fa fa-thumbs-o-up icon-public" id="icon-like"></i></a>
               <a href="#"><i class="fa fa-edit icon-public"></i></a>
               <a><i class="fa fa-share icon-public"></i></a>
-              <p class="right" id="contador"></p>
+              <p class="right grey" id="contador"></p>
               <div class="col s12 m12 divider"></div>
               <br><br>
               <div id="add-com" class="col s12 m12">
@@ -198,10 +202,10 @@
 
 
 
-
-  <script type="text/javascript" src="../vendors/jquery/jquery-3.2.1.min.js"></script>
-  <script type="text/javascript" src="../vendors/materialize/js/materialize.min.js"></script>
   <script src="https://www.gstatic.com/firebasejs/4.8.1/firebase.js"></script>
+  <script type="text/javascript" src="../vendors/jquery/jquery-3.2.1.min.js"></script>
+  <script type="text/javascript" src="../vendors/materialize/js/materialize.min.js"></script> 
+  <script type="text/javascript" src="../js/Data.js"></script>
   <script type="text/javascript" src="../js/app.js"></script>
 </body>
 </html>
