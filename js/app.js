@@ -94,13 +94,6 @@ $(document).ready(function() {
     }
   }
 
-   // crear nuevo usuarios
-  function createNewUsers() {
-    firebase.auth().createUserWithEmailAndPassword($emailCreate.val(), $passwordCreate.val())
-    .then(function(){
-      verifyUsers();
-    })
-  }
 
 
   // crear nuevo usuario con firebase
@@ -240,6 +233,32 @@ function login(uid, name) {
 function singOut() {
   database.ref('/connected/' + conectadoKey).remove();
 }
+
+
+// funcion para inicializar el modal
+$(document).ready(function(){
+  $('.modal').modal();
+});
+
+
+  $('input[type=file]').change(function(){
+
+    // var file = (this.file[0].name).toString();
+    // var reader = new FileReader();
+
+    // $('#file-info').text('');
+    // $('#file-info').text(file);
+
+    reader.onload = function(e) {
+      $('#preview img').attr('src', e.target.result);
+
+    }
+
+
+  })
+
+
+
 
 
  // ***************************validando login con users de Data

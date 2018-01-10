@@ -183,3 +183,14 @@ nav {
   right: 5px;
   position: fixed;
 }
+
+.onload-img {
+  padding: 10px 50px;
+}
+
+.box-photo {
+  height: 100px;
+  border: 1px solid gray;
+  margin-left: 150px;
+  width: 100px;
+}

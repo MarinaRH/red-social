@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <!-- hoja de stylos materialize -->
+  <link type="text/css" rel="stylesheet" href="../vendors/materialize/css/materialize.min.css"/>
+  <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <!-- hoja de stylo css -->
+  <link rel="stylesheet" href="../css/flexboxgrid.min.css">
+  <link rel="stylesheet" type="text/css" href="../css/main.css">
+  <title>E.GO</title>
+</head>
+<body >
+
+
+
+
+  <!-- Modal Trigger -->
+  <a class="waves-effect waves-light btn modal-trigger" href="#modal1">Modal</a>
+
+  <!-- Modal Structure -->
+  <div id="modal1" class="modal">
+    <div class="modal-content center-align">
+      <h4>Sube una imagen</h4>
+    </div>
+    <div class="">
+      <form action="#">
+        <div class="container-photo right-align">
+         <div class="box-photo">
+          </div>
+        </div>
+        <div class="file-field input-field onload-img">
+          <div class="btn">
+            <span>File</span>
+            <input type="file" multiple>
+          </div>
+          <div class="file-path-wrapper">
+            <input class="file-path validate" type="text" placeholder="Upload one or more files">
+          </div>
+        </div>
+      </form>
+    </div>
+    <div class="modal-footer">
+      <div class="center-align">
+        <a class="waves-effect waves-light btn">Postear</a>
+        <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat right ">cancelar</a>
+      </div>
+    </div>
+  </div>
+
+
+
+
+
+
+  <script src="https://www.gstatic.com/firebasejs/4.8.1/firebase.js"></script>
+
+  <script type="text/javascript" src="../vendors/jquery/jquery-3.2.1.min.js"></script>
+  <script type="text/javascript" src="../vendors/materialize/js/materialize.min.js"></script>
+  <script type="text/javascript" src="../js/data.js"></script>
+  <script type="text/javascript" src="../js/app.js"></script>
+</body>
+</html>
