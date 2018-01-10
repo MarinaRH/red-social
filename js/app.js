@@ -7,12 +7,13 @@ var config = {
   storageBucket: "red-social-9232b.appspot.com",
   messagingSenderId: "900037571899"
 };
+
 firebase.initializeApp(config);
 
 // inicializar formulario materialize
 $(document).ready(function() {
-
   $('select').material_select();
+  $('.modal').modal();
 
   // variables crear nuevo usuario
   var $btnCreate = $('#btnCreate');
@@ -174,13 +175,10 @@ $(document).ready(function() {
   }
   observer();
 
-
   var user = null;
   var usuariosConectados = null;
   var database = firebase.database();
   var conectadoKey = '';
-
-
   var $btnGoogle = $('#btnGoogle');
 
   $btnGoogle.on('click', logInGoogle);
@@ -195,10 +193,6 @@ $(document).ready(function() {
       initApp();
     });
   }
-// funcion para inicializar el modal
-  $(document).ready(function(){
-    $('.modal').modal();
-  });
 
  // ***************************validando login con users de Data
 
