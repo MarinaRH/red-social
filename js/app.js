@@ -31,9 +31,7 @@ $(document).ready(function() {
   var $email = $('#email');
   var $password = $('#password');
 
-  // var $close = $('#close');
-
-  // $btnCreate.on('click', createNewUsers);
+  // var $clogite.on('click', createNewUsers);
   // $btnLogIn.on('click', logIn);
   $firstName.on('keyup', validateName);
   $firstName.on('keyup', validatingNewUsers);
@@ -285,7 +283,7 @@ function singOut() {
       var texto = $newPost.val();
       $newPost.val('');
       observer();
-      $('#publicacion').append('<div id="public-header" class="col s12 m12 white"><div class="col s2 m2 white"><img src="../assets/images/perfil1.jpg" alt="" class=" img-perfil"></div><div class="col s10 m10 white">Maria Belmont<br><span class="grey-text">Publicado a las :'+getTime()+'</span><br></div><div class="col s12 m12 divider"></div></div><div id="public-body" class="col s12 m12 white"><div class="text-public"><p>'+ texto +'</p></div></div><div class="col s12 m12 white"><a><i class="fa fa-thumbs-o-up icon-public" id="icon-like"></i></a><a href="#"><i class="fa fa-edit icon-public"></i></a><a><i class="fa fa-share icon-public"></i></a><p class="right grey-text" id="number-likes"> likes</p><div class="col s12 m12 divider"></div><br><br><div id="add-comment" class="col s12 m12"></div></div>');
+      $('#publicacion').append('<div id="public-header" class="col s12 m12 white"><div class="col s2 m2 white"><img  id="coments" alt="" class=" img-perfil"></div><div id="usersComent" class="col s10 m10 white"><br><span class="grey-text">Publicado a las :'+getTime()+'</span><br></div><div class="col s12 m12 divider"></div></div><div id="public-body" class="col s12 m12 white"><div class="text-public"><p>'+ texto +'</p></div></div><div class="col s12 m12 white"><a><i class="fa fa-thumbs-o-up icon-public" id="icon-like"></i></a><a href="#"><i class="fa fa-edit icon-public"></i></a><a><i class="fa fa-share icon-public"></i></a><p class="right grey-text" id="number-likes"> likes</p><div class="col s12 m12 divider"></div><br><br><div id="add-comment" class="col s12 m12"></div></div>');
 
       $('#input-comment').removeClass('hide');
       $btnPost.attr('disabled', true);
@@ -326,44 +324,6 @@ function singOut() {
   $('#friend-active').on('click',function(e){
     $('.active').toggleClass('hide');
   })
-
-
- //**********************************+ fin de funciones para home
-
-
-
-
-// *************************************funciones para home
-var ShowPublic = function(e){
-  $('#btn-text').on('click',function(e){
-
-    observer();
-
-    var texto = $('#new-text').val();
-    $('#new-text').val('');
-    $('#publicacion').append('<div id="public-header" class="col s12 m12"><div class="col s2 m2"><img  id="coments"  alt="" class="circle img-perfil"></div><div id="usersComent" class="col s10 m10 "><br><span class="grey-text">Publicado a las :'+getTime()+'</span></div><div class="col s12 m12 divider"></div></div><div id="public-body" class="col s12 m12"><div class="text-public"><p>'+ texto +'</p></div><div class=" col s12 m12 divider"></div></div><div class="col s12 m12"><a><i class="fa fa-thumbs-o-up icon-public"></i></a><a href="#"><i class="fa fa-edit icon-public"></i></a><a><i class="fa fa-share icon-public"></i></a><div id="add-comment" class="col s12 m12"></div><div class="col s12 m12"><input id="input-comment" placeholder="Add a comment.." type="text"></div></div>');
-
-
-  })
-}
-ShowPublic();
-
-
-// Función para agregar fecha
-function getTime() {
-  var currentDate = new Date();
-  var hh = currentDate.getHours();
-  var mm = currentDate.getMinutes();
-  return hh + ':' + ((mm < 10 ? '0' : '') + mm);
-}
-
-
-$("#input-comment").keypress(function( event ) {
-  if ( event.which == 13 ) {
-     event.preventDefault();
-     alert("Ha pulsado la tecla enter");
-  }
-});
 
 
 //**********************************+ fin de funciones para home
