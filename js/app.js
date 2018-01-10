@@ -92,8 +92,6 @@ $(document).ready(function() {
     if (validateName() && validateLastName() && validateEmail() && validateDay() && validateAño()) {
       $btnCreate.removeClass('disabled');
     }
-  }
-
   // crear nuevo usuario con firebase
   function createNewUsers() {
     firebase.auth().createUserWithEmailAndPassword($emailCreate.val(), $passwordCreate.val())
@@ -188,6 +186,7 @@ $(document).ready(function() {
   $btnGoogle.on('click', logInGoogle);
   $(window).on('unload', singOut);
 
+
   function logInGoogle() {
     var provider = new firebase.auth.GoogleAuthProvider();
     firebase.auth().signInWithPopup(provider).then(function(result) {
@@ -196,6 +195,13 @@ $(document).ready(function() {
       initApp();
     });
   }
+// funcion para inicializar el modal
+  $(document).ready(function(){
+    $('.modal').modal();
+  });
+
+ // ***************************validando login con users de Data
+
 
   function initApp() {
     usuariosConectados = database.ref('/connected');
