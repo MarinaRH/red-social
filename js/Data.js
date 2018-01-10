@@ -2,6 +2,7 @@ var data = [
   {
     'name':'DeModa',
     'email':'demoda@gmail.com',
+    'password':'demoda123',
     'address':'San Borja Este n° 876',
     'phone':'(01) 374-9777',
     'descripcion':'Ofrecemos excelentes precios por mayor y un servicio personalizado sin     sacrificar nuestros diseños y la calidad de nuestras prendas femeninas.',
@@ -10,6 +11,7 @@ var data = [
   {
     'name':'ETNIKA',
     'email':'etnika@gmail.com',
+    'password':'etnika123',
     'address':'Av. dos de mayo n° 793, San Isidro',
     'phone':'(054) 999786543',
     'descripcion':'ETNIKA nace de la interrelación entre un producto de diseño propio, de     calidad y con una imagen de marca coherente y unificada.',
@@ -18,6 +20,7 @@ var data = [
   {
     'name':'Zaris',
     'email':'zaris@gmail.com',
+    'password':'zaris123',
     'address':'Av. JavierPrado este n°66',
     'phone':'(01)374777-989876766',
     'descripcion':'Prendas hechas con el mejor ALGODÓN de calidad y buen precio para los      pequeños del hogar.',
@@ -26,6 +29,7 @@ var data = [
   {
     'name':'Ana Mendoza',
     'email':'ana@gmail.com',
+    'password':'ana123',
     'profession':'Software development',
     'city':'Lima-Peru',
     'born':' August 12, 1991',
@@ -34,6 +38,7 @@ var data = [
   {
     'name':'Rossy Rodriguez Guevara',
     'email':'rossy@gmail.com',
+    'password':'rossy123',
     'profession':'FrontEnd development',
     'city':'Arequipa-Peru',
     'born':' April 12, 1990',
@@ -42,9 +47,10 @@ var data = [
   {
     'name':'Carla Nuñez Pinto',
     'email':'carla@gmail.com',
+    'password':'carla123',
     'profession':'Ux development',
     'city':'Cusco-Peru',
-    'born':' March 15, 1989',
+    'born':'March 15, 1989',
     'img':'../assets/images/perfil3.jpg'
   }
 ]

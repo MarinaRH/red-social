@@ -12,7 +12,7 @@
   <link rel="stylesheet" type="text/css" href="../css/main.css">
   <title>E.GO</title>
 </head>
-<body>
+<body >
   <header>
     <nav>
       <div class="nav-wrapper">
@@ -150,14 +150,16 @@
               </ul>
             </div>
           </div>
-          <div id="publicacion" class="border-public">
+          <div >
+            <div id="publicacion">
+            </div>
+            <div class="col s12 m12 white">
+              <input id="input-comment" placeholder="Add a comment.." type="text" class="hide">
+            </div>
           </div>
-          <div class="col s12 m12 ">
-            <input id="input-comment" placeholder="Add a comment.." type="text" class="hide">
-          </div>
-          <div class="border-public">
-            <div id="public-header" class="col s12 m12">
-              <div class="col s2 m2">
+          <div>
+            <div id="public-header" class="col s12 m12 ">
+              <div class="col s2 m2 ">
                 <img src="../assets/images/etnika.png" alt="" class=" img-perfil">
               </div>
               <div class="col s10 m10">E T N I K A<br>
@@ -165,12 +167,12 @@
               </div>
               <div class="col s12 m12 divider"></div>
             </div>
-            <div id="public-body" class="col s12 m12">
+            <div id="public-body" class="col s12 m12 white">
               <div class="text-public center">
                 <img src="../assets/images/publicacion1.jpg" class="img-publicacion" alt="">
               </div>
             </div>
-            <div class="col s12 m12 group-icon">
+            <div class="col s12 m12 group-icon white">
               <a><i class="fa fa-thumbs-o-up icon-public" id="icon-like"></i></a>
               <a href="#"><i class="fa fa-edit icon-public"></i></a>
               <a><i class="fa fa-share icon-public"></i></a>

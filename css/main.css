@@ -1,6 +1,7 @@
 * {
   font-family: 'Roboto', sans-serif;
 }
+
 /* index vista splash*/
 .gradient {
   background: linear-gradient(to bottom right, rgba(208, 236, 83, 0.534) 5%, rgba(245, 38, 107, 0.589));
@@ -37,6 +38,10 @@
 }
 
 /* header */
+header {
+  position: fixed;
+  width: 100%;
+}
 .img-logo {
   width: 30vh;
 }
@@ -44,6 +49,7 @@
 nav {
   height: 90px;
 }
+
 .nav-wrapper {
   background: linear-gradient(to bottom right, rgb(208, 236, 83) 1%, rgb(245, 38, 107));
   padding: 7px 21px;
@@ -77,7 +83,8 @@ nav {
 
 /* main */
 .content-body {
-  margin-top: 28px;
+  background-color: rgb(241, 239, 241);
+  padding-top: 120px;
 }
 /* add friends */
 .img-perfil {
@@ -122,9 +129,7 @@ nav {
 }
 
 /* add publicacion */
-.border-public {
-  border-left: 1px solid black !important;
-}
+
 .icon-public {
   font-size: 20px;
   color: rgb(63, 95, 97);
