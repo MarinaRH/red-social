@@ -7,11 +7,14 @@
   <!-- hoja de stylos bootstrap -->
   <link type="text/css" rel="stylesheet" href="../vendors/materialize/css/materialize.min.css"/>
   <!-- hoja de stylo css -->
+  <link rel="stylesheet" href="../css/flexboxgrid.min.css">
   <link rel="stylesheet" type="text/css" href="../css/main.css">
   <title>Red Social</title>
 </head>
+
 <body class="bg-login">
   <article class="vh100">
+
     <div class="container">
       <div class="row">
         <div class="col s12 col m6 hide-on-small-only">
@@ -21,7 +24,7 @@
           <!-- formulario de inicio de sesion -->
           <form class="form">
             <div class="center-align">
-              <img class="img-logo" src="../assets/images/logo.png" alt="logo">
+              <img class="img-logo responsive-img" src="../assets/images/logo.png" alt="logo">
             </div>
             <p id="publicacion" class="center-align info-login">INICIAR SESION</p>
             <div class="input-field ">
@@ -34,12 +37,21 @@
             </div>
             <a href="home.html" id="btnLogIn" class="waves-effect waves-light btn disabled grey">Iniciar Sesion</a>
             <a href="registrate.html" id="btnLogIn" class="waves-effect waves-light btn grey">Registrate</a>
+
             <div class="">
+                <a id="btnGoogle" class="waves-effect waves-light btn">Iniciar Sesion con Google</a>
+                <!-- href="home.html"  -->
+
               <p>
                 <input type="checkbox" class="filled-in" id="filled-in-box" />
                 <label for="filled-in-box"><a href="#">No cerrar sesion</a></label>
               </p>
               <a href="#">¿Tienes problemas para iniciar sesión?</a>
+
+
+              <div id="container">
+
+              </div>
             </div>
           </form>
         </div>
@@ -49,7 +61,8 @@
   <script type="text/javascript" src="../vendors/jquery/jquery-3.2.1.min.js"></script>
   <script type="text/javascript" src="../vendors/materialize/js/materialize.min.js"></script>
   <script src="https://www.gstatic.com/firebasejs/4.8.1/firebase.js"></script>
-  <script type="text/javascript" src="../js/Data.js"></script>
+
+  <script type="text/javascript" src="../js/data.js"></script>
   <script type="text/javascript" src="../js/app.js"></script>
 </body>
 </html>
