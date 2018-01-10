@@ -248,6 +248,7 @@ $(document).ready(function() {
 
   $('#friend-active').on('click',function(e){
     $('.active').toggleClass('hide');
+    
   })
   
 
