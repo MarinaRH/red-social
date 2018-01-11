@@ -1,4 +1,3 @@
-
 var data = {
   'anacarlavegam@gmail.com': {
     'friends': [
