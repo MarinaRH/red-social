@@ -33,8 +33,7 @@ $(document).ready(function() {
   var $email = $('#email');
   var $password = $('#password');
 
-  // var $clogite.on('click', createNewUsers);
-  // $btnLogIn.on('click', logIn);
+
   $firstName.on('keyup', validateName);
   $firstName.on('keyup', validatingNewUsers);
   $lastName.on('keyup', validateLastName);
@@ -45,10 +44,6 @@ $(document).ready(function() {
   $day.on('keyup', validatingNewUsers);
   $año.on('keyup', validateAño);
   $año.on('keyup', validatingNewUsers);
-
-  // $email.on('keyup',validSingUp);
-  // $password.on('keyup',validSingUp);
-
 
   // validando nombre de usuario
   function validateName() {
@@ -134,10 +129,9 @@ $(document).ready(function() {
       firebase.auth().onAuthStateChanged(function(user) {
         var $photoProfile = $('#photoProfile');
         var $nameUsers = $('#nameUsers');
-        var $coments = $('#coments');
+        // var $coments = $('#coments');
         var $usersComent = $('.usersComent');
         var $comentsPhoto = $('.comentsPhoto');
-        // var $dataPhoto = data["anacarlavegam@gmail.com"]["friends"];
 
       if (user) {
         // User is signed in.
@@ -157,7 +151,7 @@ $(document).ready(function() {
         console.log(providerData);
 
         $photoProfile.attr('src', photoURL);
-        $coments.attr('src', photoURL);
+        // $coments.attr('src', photoURL);
         $comentsPhoto.attr('src', photoURL);
         $nameUsers.text(displayName);
         $usersComent.text(displayName);
@@ -165,14 +159,6 @@ $(document).ready(function() {
         var $nameFriend = $('#nameFriend');
         var $photoFriend = $('#friend');
 
-        // for (var i = 0; i < Object.keys(data).length; i++) {
-        //   if (Object.keys(data)[i] === user.email ) {
-        //     for (var j = 0; j < $dataPhoto.length; j++){
-        //       $photoFriend.attr('src', $dataPhoto[j].photo);
-        //       $nameFriend.text($dataPhoto[j].name);
-        //     }
-        //   }
-        // }
       } else {
         console.log('no existe usuario activo');
       }
@@ -187,8 +173,6 @@ $(document).ready(function() {
   var $btnGoogle = $('#btnGoogle');
 
   $btnGoogle.on('click', logInGoogle);
-  // $(window).on('load', singOut);
-
 
   function logInGoogle() {
     event.preventDefault();
@@ -220,11 +204,6 @@ $(document).ready(function() {
     console.log(conectadoKey);
   }
 
-  // function singOut() {
-  //   database.ref('/connected/' + conectadoKey).remove();
-  // }
-
-  // ****************************funciones para home
   // para agregar amigos
   $('#btn-add').on('click',function(e){
     $('#btn-add').addClass('hide');
