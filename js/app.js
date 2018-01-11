@@ -11,11 +11,8 @@ var config = {
 firebase.initializeApp(config);
 
 // inicializar formulario materialize
-$(window).on('load', ready);
 
- function ready() {
-
-    // $(window).on('load', singOut);
+$(document).ready(function() {
 
   $('select').material_select();
   $('.modal').modal();
@@ -138,10 +135,9 @@ $(window).on('load', ready);
         var $photoProfile = $('#photoProfile');
         var $nameUsers = $('#nameUsers');
         var $coments = $('#coments');
-        var $usersComent = $('#usersComent');
-        var $coments1 = $('#coments1');
+        var $usersComent = $('.usersComent');
+        var $comentsPhoto = $('.comentsPhoto');
         var $dataPhoto = data["anacarlavegam@gmail.com"]["friends"];
-
 
       if (user) {
         // User is signed in.
@@ -162,7 +158,7 @@ $(window).on('load', ready);
 
         $photoProfile.attr('src', photoURL);
         $coments.attr('src', photoURL);
-        $coments1.attr('src', photoURL);
+        $comentsPhoto.attr('src', photoURL);
         $nameUsers.text(displayName);
         $usersComent.text(displayName);
 
@@ -196,7 +192,6 @@ $(window).on('load', ready);
 
   function logInGoogle() {
     event.preventDefault();
-
 
     var provider = new firebase.auth.GoogleAuthProvider();
     firebase.auth().signInWithPopup(provider).then(function(result) {
@@ -251,7 +246,7 @@ $(window).on('load', ready);
       var texto = $newPost.val();
       $newPost.val('');
       observer();
-      $('#publicacion').append('<div id="public-header" class="col s12 m12 white"><div class="col s2 m2 white"><img  id="coments1" alt="" class="img-perfil"></div><div id="usersComent" class="col s10 m10 white"><br><span class="grey-text">Publicado a las :'+getTime()+'</span><br></div><div class="col s12 m12 divider"></div></div><div id="public-body" class="col s12 m12 white"><div class="text-public"><p>'+ texto +'</p></div></div><div class="col s12 m12 white"><a><i class="fa fa-thumbs-o-up icon-public" id="icon-like"></i></a><a href="#"><i class="fa fa-edit icon-public"></i></a><a><i class="fa fa-share icon-public"></i></a><p class="right grey-text" id="number-likes"> likes</p><div class="col s12 m12 divider"></div><br><br><div id="add-comment" class="col s12 m12"></div></div>');
+      $('#publicacion').append('<div id="public-header" class="col s12 m12 white"><div class="col s2 m2 white"><img  class="comentsPhoto img-perfil "></div><div class="col s10 m10 white usersComent"><br><span class="grey-text">Publicado a las :'+getTime()+'</span><br></div><div class="col s12 m12 divider"></div></div><div id="public-body" class="col s12 m12 white"><div class="text-public"><p>'+ texto +'</p></div></div><div class="col s12 m12 white"><a><i class="fa fa-thumbs-o-up icon-public" id="icon-like"></i></a><a href="#"><i class="fa fa-edit icon-public"></i></a><a><i class="fa fa-share icon-public"></i></a><p class="right grey-text" id="number-likes"> likes</p><div class="col s12 m12 divider"></div><br><br><div id="add-comment" class="col s12 m12"></div></div>');
 
       $('#input-comment').removeClass('hide');
       $btnPost.attr('disabled', true);
