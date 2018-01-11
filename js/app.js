@@ -11,7 +11,10 @@ var config = {
 firebase.initializeApp(config);
 
 // inicializar formulario materialize
-$(document).load(function() {
+$(window).load(function() {
+
+    // $(window).on('load', singOut);
+
   $('select').material_select();
   $('.modal').modal();
 
@@ -186,7 +189,7 @@ $(document).load(function() {
   var $btnGoogle = $('#btnGoogle');
 
   $btnGoogle.on('click', logInGoogle);
-  $(window).on('unload', singOut);
+  // $(window).on('load', singOut);
 
 
   function logInGoogle() {
@@ -220,9 +223,9 @@ $(document).load(function() {
     console.log(conectadoKey);
   }
 
-  function singOut() {
-    database.ref('/connected/' + conectadoKey).remove();
-  }
+  // function singOut() {
+  //   database.ref('/connected/' + conectadoKey).remove();
+  // }
 
   // ****************************funciones para home
   // para agregar amigos
