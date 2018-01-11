@@ -11,7 +11,9 @@ var config = {
 firebase.initializeApp(config);
 
 // inicializar formulario materialize
-$(window).load(function() {
+$(window).on('load', ready);
+
+ function ready() {
 
     // $(window).on('load', singOut);
 
