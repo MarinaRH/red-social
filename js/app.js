@@ -137,7 +137,7 @@ $(document).ready(function() {
         var $coments = $('#coments');
         var $usersComent = $('.usersComent');
         var $comentsPhoto = $('.comentsPhoto');
-        var $dataPhoto = data["anacarlavegam@gmail.com"]["friends"];
+        // var $dataPhoto = data["anacarlavegam@gmail.com"]["friends"];
 
       if (user) {
         // User is signed in.
@@ -165,14 +165,14 @@ $(document).ready(function() {
         var $nameFriend = $('#nameFriend');
         var $photoFriend = $('#friend');
 
-        for (var i = 0; i < Object.keys(data).length; i++) {
-          if (Object.keys(data)[i] === user.email ) {
-            for (var j = 0; j < $dataPhoto.length; j++){
-              $photoFriend.attr('src', $dataPhoto[j].photo);
-              $nameFriend.text($dataPhoto[j].name);
-            }
-          }
-        }
+        // for (var i = 0; i < Object.keys(data).length; i++) {
+        //   if (Object.keys(data)[i] === user.email ) {
+        //     for (var j = 0; j < $dataPhoto.length; j++){
+        //       $photoFriend.attr('src', $dataPhoto[j].photo);
+        //       $nameFriend.text($dataPhoto[j].name);
+        //     }
+        //   }
+        // }
       } else {
         console.log('no existe usuario activo');
       }
