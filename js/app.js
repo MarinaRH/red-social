@@ -289,5 +289,4 @@ $(document).ready(function() {
     $('.actives').toggleClass('hide');
   })
 
- //**********************************+ fin de funciones para home
 });
