@@ -11,7 +11,7 @@ var config = {
 firebase.initializeApp(config);
 
 // inicializar formulario materialize
-$(document).onload(function() {
+$(document).load(function() {
   $('select').material_select();
   $('.modal').modal();
 
