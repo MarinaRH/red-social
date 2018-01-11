@@ -233,16 +233,16 @@ $(document).ready(function() {
 
 
   // habilitar boton para publicar
-  var $btnPost=$('#btn-text');
-  var $newPost=$('#new-text');
-  $newPost.on('input',function(){
+  var $btnPost = $('#btn-text');
+  var $newPost = $('#new-text');
+  $newPost.on('input', function() {
     $btnPost.attr('disabled', false);
     $btnPost.addClass('btn-grad');
   });
 
   // funcion para agregar publicaciones
   var ShowPublic = function(e){
-    $btnPost.on('click',function(e){
+  $btnPost.on('click', function(e) {
       var texto = $newPost.val();
       $newPost.val('');
       observer();
@@ -265,7 +265,7 @@ $(document).ready(function() {
   }
   // comentar las publicaciones
   $('#input-comment, #input-com').keypress(function(event) {
-    if ( event.which == 13 ) {
+    if (event.which == 13 ) {
       event.preventDefault();
       // alert("Ha pulsado la tecla enter");
       var comentario = $('#input-comment').val();
