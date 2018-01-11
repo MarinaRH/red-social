@@ -81,11 +81,11 @@ $(document).ready(function() {
 
   function validateDay() {
     localStorage.password = $passwordCreate.val();
-    return $day.val().length == 2;
+    return $day.val().length === 2;
   }
 
   function validateAño() {
-    return $año.val().length == 4;
+    return $año.val().length === 4;
   }
 
   // validando formulario de crear nuevo usuario
@@ -93,15 +93,17 @@ $(document).ready(function() {
     if (validateName() && validateLastName() && validateEmail() && validateDay() && validateAño()) {
       $btnCreate.removeClass('disabled');
     }
+  }
+
   // crear nuevo usuario con firebase
   function createNewUsers() {
     firebase.auth().createUserWithEmailAndPassword($emailCreate.val(), $passwordCreate.val())
-    .then(function(){
-      $btnCreate.removeClass('disabled');
-      verifyUsers();
-    })
+      .then(function() {
+        $btnCreate.removeClass('disabled');
+        verifyUsers();
+      })
 
-    .catch(function(error) {
+      .catch(function(error) {
       // Handle Errors here.
       var errorCode = error.code;
       var errorMessage = error.message;
@@ -186,6 +188,9 @@ $(document).ready(function() {
 
 
   function logInGoogle() {
+    event.preventDefault();
+    window.location.href = '../views/home.html'
+
     var provider = new firebase.auth.GoogleAuthProvider();
     firebase.auth().signInWithPopup(provider).then(function(result) {
       user = result.user;
@@ -244,6 +249,7 @@ $(document).ready(function() {
       $btnPost.removeClass('btn-grad');
     })
   }
+  
   ShowPublic();
 
   // Función para agregar hora
