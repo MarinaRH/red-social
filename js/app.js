@@ -136,12 +136,11 @@ $(document).ready(function() {
         var $coments = $('#coments');
         var $usersComent = $('.usersComent');
         var $comentsPhoto = $('.comentsPhoto');
+        var $comentPicture = $('.comentPicture');
         // var $dataPhoto = data["anacarlavegam@gmail.com"]["friends"];
 
       if (user) {
-        // User is signed in.
         console.log('usuario activo');
-        //  toShow();
         var displayName = user.displayName;
         var email = user.email;
         console.log(email);
@@ -160,6 +159,7 @@ $(document).ready(function() {
         $comentsPhoto.attr('src', photoURL);
         $nameUsers.text(displayName);
         $usersComent.text(displayName);
+        $comentPicture.attr('src', photoURL); 
 
         var $nameFriend = $('#nameFriend');
         var $photoFriend = $('#friend');
@@ -241,7 +241,7 @@ $(document).ready(function() {
 
   // funcion para agregar publicaciones
   var ShowPublic = function(e){
-  $btnPost.on('click', function(e) {
+    $btnPost.on('click', function(e) {
       var texto = $newPost.val();
       $newPost.val('');
       observer();
@@ -271,14 +271,14 @@ $(document).ready(function() {
       var comentar=$('#input-com').val();
       $('#input-comment').val('');
       $('#input-com').val('');
-      $('#add-comment').append('<div class="col s1 m1"><img src="../assets/images/perfil1.jpg" alt="" class="img-comment"></div> <p class="col s11 m11 ">'+comentario+'<span  class="right grey-text">publicado : '+getTime()+'</span></p>');
+      $('#add-comment').append('<div class="col s1 m1"><img class="comentPicture img-comment" alt="" ></div><div class="col s10 m10 white usersComent"><br></div><p class="col s11 m11 ">'+comentario+'<span  class="right grey-text">publicado : '+getTime()+'</span></p>');
       $('#add-com').append('<div class="col s1 m1"><img src="../assets/images/perfil1.jpg" alt="" class="img-comment"></div> <p class="col s11 m11 ">'+comentar+'<span  class="right grey-text">publicado : '+getTime()+'</span></p>');
     }
   });
 
+   var cont=1;
   // contador para likes
   $('#icon-like').on('click',function(e){
-    var cont=1;
     $(this).toggleClass('pink-text');
     $('#contador').html(cont +'like');
     cont++;
