@@ -132,15 +132,10 @@ $(document).ready(function() {
         var $usersComent = $('.usersComent');
         var $comentsPhoto = $('.comentsPhoto');
         var $comentPicture = $('.comentPicture');
-        // var $dataPhoto = data["anacarlavegam@gmail.com"]["friends"];
 
 
       if (user) {
         console.log('usuario activo');
-<<<<<<< HEAD
-
-=======
->>>>>>> dbb15895328447c601b8848bb75da4289fd261ef
         var displayName = user.displayName;
         var email = user.email;
         console.log(email);
@@ -159,7 +154,7 @@ $(document).ready(function() {
         $comentsPhoto.attr('src', photoURL);
         $nameUsers.text(displayName);
         $usersComent.text(displayName);
-        $comentPicture.attr('src', photoURL); 
+        $comentPicture.attr('src', photoURL);
 
         var $nameFriend = $('#nameFriend');
         var $photoFriend = $('#friend');
@@ -279,7 +274,7 @@ $(document).ready(function() {
     e.preventDefault();
     $('#file').click();
   });
-    
+
   $('input[type=file]').change(function() {
     var file = (this.files[0].name).toString();
     var reader = new FileReader();
@@ -288,7 +283,7 @@ $(document).ready(function() {
       $('#publicacion-img').append('<div id="public-header" class="col s12 m12 white"><div class="col s2 m2 white"><img  class="comentsPhoto img-perfil "></div><div class="col s10 m10 white usersComent"><br><span class="grey-text">Publicado a las :'+getTime()+'</span><br></div><div class="col s12 m12 divider"></div></div><div id="public-body" class="col s12 m12 white"><img class="img-file img-post center-block" src="#"> </div><div class="col s12 m12 white"><a><i class="fa fa-thumbs-o-up icon-public" id="icon-like"></i></a><a href="#"><i class="fa fa-edit icon-public"></i></a><a><i class="fa fa-share icon-public"></i></a><p class="right grey-text" id="number-likes"> likes</p><div class="col s12 m12 divider"></div><br><br><div id="add-comment" class="col s12 m12"></div></div>');
       $('.img-post').attr('src', e.target.result);
     };
-         
+
     reader.readAsDataURL(this.files[0]);
   });
 
