@@ -249,6 +249,11 @@ nav {
   box-sizing: border-box;
 }
 
+.text-name {
+  font-size: 28px;
+  color: rgb(32, 31, 31);
+}
+
 @media (max-width: 768px) {
   .content-profile {
     padding: 320px 24px 0 24px;

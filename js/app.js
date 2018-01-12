@@ -152,7 +152,7 @@ $(document).ready(function() {
         console.log(providerData);
 
         $photoProfile.attr('src', photoURL);
-        // $coments.attr('src', photoURL);
+        $coments.attr('src', photoURL);
         $comentsPhoto.attr('src', photoURL);
         $nameUsers.text(displayName);
         $usersComent.text(displayName);
@@ -253,7 +253,7 @@ $(document).ready(function() {
       var comentar=$('#input-com').val();
       $('#input-comment').val('');
       $('#input-com').val('');
-      $('#add-comment').append('<div class="col s1 m1"><img class="comentPicture img-comment" alt="" ></div><div class="col s10 m10 white usersComent"><br></div><p class="col s11 m11 ">'+comentario+'<span  class="right grey-text">publicado : '+getTime()+'</span></p>');
+      $('#add-comment').append('<div class="col s1 m1"><img class="comentsPhoto img-comment" alt="" ></div><div class="col s10 m10 white usersComent"><br></div><p class="col s11 m11 ">'+comentario+'<span  class="right grey-text">publicado : '+getTime()+'</span></p>');
       $('#add-com').append('<div class="col s1 m1"><img src="../assets/images/perfil1.jpg" alt="" class="img-comment"></div> <p class="col s11 m11 ">'+comentar+'<span  class="right grey-text">publicado : '+getTime()+'</span></p>');
     }
   });
