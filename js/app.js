@@ -152,7 +152,7 @@ $(document).ready(function() {
         console.log(providerData);
 
         $photoProfile.attr('src', photoURL);
-        $coments.attr('src', photoURL);
+        //$coments.attr('src', photoURL);
         $comentsPhoto.attr('src', photoURL);
         $nameUsers.text(displayName);
         $usersComent.text(displayName);
