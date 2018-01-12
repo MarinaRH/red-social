@@ -131,7 +131,6 @@ $(document).ready(function() {
         var $nameUsers = $('#nameUsers');
         var $usersComent = $('.usersComent');
         var $comentsPhoto = $('.comentsPhoto');
-        var $comentPicture = $('.comentPicture');
 
 
       if (user) {
@@ -154,10 +153,6 @@ $(document).ready(function() {
         $comentsPhoto.attr('src', photoURL);
         $nameUsers.text(displayName);
         $usersComent.text(displayName);
-        $comentPicture.attr('src', photoURL);
-
-        var $nameFriend = $('#nameFriend');
-        var $photoFriend = $('#friend');
 
       } else {
         console.log('no existe usuario activo');
