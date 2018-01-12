@@ -141,21 +141,26 @@
               <button id="btn-text"  type="submit" class="btn right" disabled>Post</button>
               <ul>
                 <li class="inline"><a href="#"><i class="fa fa-map-marker icon"></i></a></li>
-
-                <li class="modal-trigger inline" href="#modal1"><a href="#"><i class="fa fa-camera icon "></i> </a></li>
-
+                <li class="inline" href="#modal1"><a href="#" id='file-select'><i class="fa fa-camera icon "></i> </a></li>
                 <li class="inline"><a href="#"><i class="fa fa-film icon"></i></a></li>
                 <li class="inline"><a href="#"><i class="fa fa-microphone icon"></i></a></li>
               </ul>
             </div>
           </div>
           <div>
-            <div id="publicacion">
+            <div id="publicacion" >
             </div>
             <div class="col s12 m12 white">
               <input id="input-comment" placeholder="Add a comment.." type="text" class="hide">
             </div>
+          </div > 
+          <!-- publicando imagenes -->
+          <input id='file' name='file' type='file' class="hide">
+          <div>
+            <div id="publicacion-img">
+            </div>
           </div>
+          <br><br>
           <div>
             <div id="public-header" class="col s12 m12 ">
               <div class="col s2 m2 ">
@@ -250,7 +255,7 @@
     </div>
   </main>
   <!-- Modal Structure -->
-  <div id="modal1" class="modal">
+  <!-- <div id="modal1" class="modal">
     <div class="modal-content center-align">
       <h4>Sube una imagen</h4>
     </div>
@@ -279,7 +284,7 @@
         <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat right btn-grad">cancelar</a>
       </div>
     </div>
-  </div>
+  </div> -->
   
   <script type="text/javascript" src="../vendors/jquery/jquery-3.2.1.min.js"></script>
   <script src="https://www.gstatic.com/firebasejs/4.8.1/firebase.js"></script>

@@ -260,6 +260,7 @@ $(document).ready(function() {
 
    var cont=1;
   // contador para likes
+
   $('#icon-like').on('click',function(e){
     $(this).toggleClass('pink-text');
     $('#contador').html(cont +'like');
@@ -269,5 +270,24 @@ $(document).ready(function() {
   $('#friend-active').on('click',function(e){
     $('.actives').toggleClass('hide');
   })
+
+  // funcion para postear imagen
+  $('#file-select').on('click', function(e) {
+    e.preventDefault();
+    $('#file').click();
+  });
+    
+  $('input[type=file]').change(function() {
+    var file = (this.files[0].name).toString();
+    var reader = new FileReader();
+
+    reader.onload = function(e) {
+      $('#publicacion-img').append('<div id="public-header" class="col s12 m12 white"><div class="col s2 m2 white"><img  class="comentsPhoto img-perfil "></div><div class="col s10 m10 white usersComent"><br><span class="grey-text">Publicado a las :'+getTime()+'</span><br></div><div class="col s12 m12 divider"></div></div><div id="public-body" class="col s12 m12 white"><img class="img-file img-post center-block" src="#"> </div><div class="col s12 m12 white"><a><i class="fa fa-thumbs-o-up icon-public" id="icon-like"></i></a><a href="#"><i class="fa fa-edit icon-public"></i></a><a><i class="fa fa-share icon-public"></i></a><p class="right grey-text" id="number-likes"> likes</p><div class="col s12 m12 divider"></div><br><br><div id="add-comment" class="col s12 m12"></div></div>');
+      $('.img-post').attr('src', e.target.result);
+    };
+         
+    reader.readAsDataURL(this.files[0]);
+  });
+
 
 });
