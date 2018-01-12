@@ -131,11 +131,16 @@ $(document).ready(function() {
         var $nameUsers = $('#nameUsers');
         var $usersComent = $('.usersComent');
         var $comentsPhoto = $('.comentsPhoto');
+        var $comentPicture = $('.comentPicture');
+        // var $dataPhoto = data["anacarlavegam@gmail.com"]["friends"];
+
 
       if (user) {
-        // User is signed in.
         console.log('usuario activo');
+<<<<<<< HEAD
 
+=======
+>>>>>>> dbb15895328447c601b8848bb75da4289fd261ef
         var displayName = user.displayName;
         var email = user.email;
         console.log(email);
@@ -150,10 +155,11 @@ $(document).ready(function() {
         console.log(providerData);
 
         $photoProfile.attr('src', photoURL);
-        // $coments.attr('src', photoURL);
+        //$coments.attr('src', photoURL);
         $comentsPhoto.attr('src', photoURL);
         $nameUsers.text(displayName);
         $usersComent.text(displayName);
+        $comentPicture.attr('src', photoURL); 
 
         var $nameFriend = $('#nameFriend');
         var $photoFriend = $('#friend');
@@ -220,7 +226,7 @@ $(document).ready(function() {
 
   // funcion para agregar publicaciones
   var ShowPublic = function(e){
-  $btnPost.on('click', function(e) {
+    $btnPost.on('click', function(e) {
       var texto = $newPost.val();
       $newPost.val('');
       observer();
@@ -250,14 +256,15 @@ $(document).ready(function() {
       var comentar=$('#input-com').val();
       $('#input-comment').val('');
       $('#input-com').val('');
-      $('#add-comment').append('<div class="col s1 m1"><img src="../assets/images/perfil1.jpg" alt="" class="img-comment"></div> <p class="col s11 m11 ">'+comentario+'<span  class="right grey-text">publicado : '+getTime()+'</span></p>');
+      $('#add-comment').append('<div class="col s1 m1"><img class="comentsPhoto img-comment" alt="" ></div><div class="col s10 m10 white usersComent"><br></div><p class="col s11 m11 ">'+comentario+'<span  class="right grey-text">publicado : '+getTime()+'</span></p>');
       $('#add-com').append('<div class="col s1 m1"><img src="../assets/images/perfil1.jpg" alt="" class="img-comment"></div> <p class="col s11 m11 ">'+comentar+'<span  class="right grey-text">publicado : '+getTime()+'</span></p>');
     }
   });
 
+   var cont=1;
   // contador para likes
+
   $('#icon-like').on('click',function(e){
-    var cont=1;
     $(this).toggleClass('pink-text');
     $('#contador').html(cont +'like');
     cont++;
@@ -266,5 +273,24 @@ $(document).ready(function() {
   $('#friend-active').on('click',function(e){
     $('.actives').toggleClass('hide');
   })
+
+  // funcion para postear imagen
+  $('#file-select').on('click', function(e) {
+    e.preventDefault();
+    $('#file').click();
+  });
+    
+  $('input[type=file]').change(function() {
+    var file = (this.files[0].name).toString();
+    var reader = new FileReader();
+
+    reader.onload = function(e) {
+      $('#publicacion-img').append('<div id="public-header" class="col s12 m12 white"><div class="col s2 m2 white"><img  class="comentsPhoto img-perfil "></div><div class="col s10 m10 white usersComent"><br><span class="grey-text">Publicado a las :'+getTime()+'</span><br></div><div class="col s12 m12 divider"></div></div><div id="public-body" class="col s12 m12 white"><img class="img-file img-post center-block" src="#"> </div><div class="col s12 m12 white"><a><i class="fa fa-thumbs-o-up icon-public" id="icon-like"></i></a><a href="#"><i class="fa fa-edit icon-public"></i></a><a><i class="fa fa-share icon-public"></i></a><p class="right grey-text" id="number-likes"> likes</p><div class="col s12 m12 divider"></div><br><br><div id="add-comment" class="col s12 m12"></div></div>');
+      $('.img-post').attr('src', e.target.result);
+    };
+         
+    reader.readAsDataURL(this.files[0]);
+  });
+
 
 });
