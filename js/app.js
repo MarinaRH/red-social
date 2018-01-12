@@ -129,14 +129,13 @@ $(document).ready(function() {
       firebase.auth().onAuthStateChanged(function(user) {
         var $photoProfile = $('#photoProfile');
         var $nameUsers = $('#nameUsers');
-        // var $coments = $('#coments');
         var $usersComent = $('.usersComent');
         var $comentsPhoto = $('.comentsPhoto');
 
       if (user) {
         // User is signed in.
         console.log('usuario activo');
-        //  toShow();
+
         var displayName = user.displayName;
         var email = user.email;
         console.log(email);
