@@ -200,7 +200,7 @@ $(document).ready(function() {
   }
 
   // para agregar amigos
-  $('.btn-add').on('click',function(e){
+  $('#btn-add').on('click',function(e){
     $(this).addClass('hide');
     $('#btn-friend').removeClass('hide');
   });
@@ -226,6 +226,7 @@ $(document).ready(function() {
 
     $btnPost.attr('disabled', true);
     $btnPost.removeClass('btn-grad');
+    $newPost.focus();
   })
   }
 

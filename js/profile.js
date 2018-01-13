@@ -174,7 +174,7 @@ $(document).ready(function() {
       var comentario = $('#input-comment').val();
       $('#input-comment').val('');
       if(comentario){
-        $('#add-comment').append('<div class="col s1 m1"><img class="comentsPhoto img-perfil" alt="" ></div><div class="col s10 m10 white usersComent"></div><p class="col s11 m11 ">'+comentario+'<span  class="right grey-text">publicado : '+getTime()+'</span></p>');
+        $('#add-comment').append('<div class="col s1 m1"><img class="comentsPhoto img-perfil" alt="" ></div><div class="col s11 m11  usersComent"></div><p class="col s11 m11 ">'+comentario+'<span  class="right grey-text">publicado : '+getTime()+'</span></p>');
       }else{
         $('#input-comment').val('');
       }
