@@ -45,16 +45,17 @@
           <div class="post">
             <button id="btn-text"  type="submit" class="btn right" disabled>Post</button>
             <ul>
-              <li class="inline"><a href="#"><i class="fa fa-map-marker icon"></i></a></li>
-              <li class="modal-trigger inline" href="#modal1"><a href="#"><i class="fa fa-camera icon "></i> </a></li>
+              <li class="inline" id='file-select'><a href="#"><i class="fa fa-camera icon "></i> </a></li>
               <li class="inline"><a href="#"><i class="fa fa-film icon"></i></a></li>
-              <li class="inline"><a href="#"><i class="fa fa-microphone icon"></i></a></li>
             </ul>
           </div>
         </div>
         <!-- agregar publicacion -->
         <div id="publicacion">
         </div>
+        <!-- publicando imagenes -->
+        <input id='file' name='file' type='file' class="hide">
+        <!-- fin de imagen publicada -->
         <div class="col s12 m12 border-post">
           <div id="public-header" class="col s12 m12 ">
             <div class="col s2 m2 ">
@@ -114,9 +115,6 @@
               </div>
               <p class="col s11 m11 ">Buenas ofertas..!! <span><img src="../assets/images/emogi.png" alt="emogi" class="img-emogi"></span><span  class="right grey-text">publicado : 13:01</span></p>
             </div>
-            <div class="col s12 m12">
-              <input id="input-comment" placeholder="Add a comment.." type="text">
-            </div>
           </div>
         </div>
         <div class="col s12 m12 border-post">
@@ -147,9 +145,6 @@
                 <img src="../assets/images/perfil1.jpg" alt="" class="img-comment">
               </div>
               <p class="col s11 m11 ">Buenas ofertas..!! <span><img src="../assets/images/emogi.png" alt="emogi" class="img-emogi"></span><span  class="right grey-text">publicado : 13:01</span></p>
-            </div>
-            <div class="col s12 m12">
-              <input id="input-comment" placeholder="Add a comment.." type="text">
             </div>
           </div>
         </div>
