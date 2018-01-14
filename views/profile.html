@@ -8,6 +8,7 @@
   <link type="text/css" rel="stylesheet" href="../vendors/materialize/css/materialize.min.css"/>
   <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <!-- hoja de stylo css -->
   <link rel="stylesheet" href="../css/flexboxgrid.min.css">
   <link rel="stylesheet" type="text/css" href="../css/main.css">
@@ -138,6 +139,11 @@
       </div>
 
       <div id="container-store" class="col m3">
+        <div class="input-field">
+            <i class="material-icons prefix">search</i>
+            <input type="text" id="autocomplete-input" class="autocomplete">
+            <label for="autocomplete-input">Ingresa tu busqueda</label>
+          </div>
 
 
 
@@ -150,6 +156,9 @@
   <script src="https://www.gstatic.com/firebasejs/4.8.1/firebase.js"></script>
   <script type="text/javascript" src="../vendors/jquery/jquery-3.2.1.min.js"></script>
   <script type="text/javascript" src="../vendors/materialize/js/materialize.min.js"></script>
+  <script type="text/javascript" src="../js/data.js">
+
+  </script>
   <script type="text/javascript" src="../js/app.js"></script>
 </body>
 </html>

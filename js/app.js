@@ -293,8 +293,33 @@ $(document).ready(function() {
     cont++;
   });
 
+  var $containerStore = $('#container-store');
 
-    
+
+  function showStore() {
+debugger
+    for (var i = 0; i < data.length; i++) {
+      var $store = $('<div></div>');
+      $store.addClass('collection box');
+      $store.attr('data-name', data[i].nameTienda);
+      $store.attr('id', 'modal1');
+      $containerStore.append($store);
+
+      var $text = $('<p></p>');
+      $text.addClass('title');
+      $text.text(data[i].producto);
+      $store.append($text);
+
+      var $img = $('<img/>');
+      $img.addClass('responsive-img');
+      $img.attr('src', data[i].image);
+      $store.append($img);
+    }
+  }
+
+  showStore();
+
+
 
 
 
