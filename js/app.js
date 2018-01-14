@@ -136,17 +136,17 @@ $(document).ready(function() {
       if (user) {
         console.log('usuario activo');
         var displayName = user.displayName;
+        localStorage.displayName = user.displayName;
         var email = user.email;
         console.log(email);
         var emailVerified = user.emailVerified;
-        console.log(emailVerified);
         var photoURL = user.photoURL;
         console.log(photoURL);
+
+        localStorage.photoURL = user.photoURL;
         var isAnonymous = user.isAnonymous;
         var uid = user.uid;
-        console.log(uid);
         var providerData = user.providerData;
-        console.log(providerData);
 
         $photoProfile.attr('src', photoURL);
         $comentsPhoto.attr('src', photoURL);
@@ -219,9 +219,17 @@ $(document).ready(function() {
   // funcion para agregar publicaciones
   var ShowPublic = function(e){
   $btnPost.on('click', function(e) {
+    debugger
+    //  observer();
     var texto = $newPost.val();
     $newPost.val('');
-    $('#publicacion').prepend('<div class="col s12 m12 border-post"><div id="public-header" class="col s12 m12"><br><div class="col s2 m2"><img id="photoProfile" class=" img-perfil "></div><div class="col s10 m10  usersComent"><br><span class="grey-text">Publicado a las :'+getTime()+'</span><br></div><div class="col s12 m12 divider"></div></div><div id="public-body" class="col s12 m12 "><div class="text-public"><p>'+ texto +'</p></div></div><div class="col s12 m12 divider"></div><div class="col s12 m12 "><a><i class="fa fa-thumbs-o-up icon-public" id="icon-like"></i></a><a href="#"><i class="fa fa-edit icon-public"></i></a><a><i class="fa fa-share icon-public"></i></a><p class="right grey-text" id="contador"></p><div id="add-comment" class="col s12 m12"></div></div><div class="col s12 m12 "><input id="input-comment" placeholder="Add a comment.." type="text"></div><br></div>');
+
+    $('#publicacion').prepend('<div class="col s12 m12 border-post"><div id="public-header" class="col s12 m12"><br><div class="col s2 m2"><img class=" img-perfil photoUser"></div><div class="col s10 m10  userName"></div><br><span class="grey-text">Publicado a las :'+getTime()+'</span><br><div class="col s12 m12 divider"></div></div><div id="public-body" class="col s12 m12 "><div class="text-public"><p>'+ texto +'</p></div></div><div class="col s12 m12 divider"></div><div class="col s12 m12 "><a><i class="fa fa-thumbs-o-up icon-public" id="icon-like"></i></a><a href="#"><i class="fa fa-edit icon-public"></i></a><a><i class="fa fa-share icon-public"></i></a><p class="right grey-text" id="contador"></p><div id="add-comment" class="col s12 m12"></div></div><div class="col s12 m12 "><input id="input-comment" placeholder="Add a comment.." type="text"></div><br></div>');
+
+    var $photoUser = $('.photoUser');
+    var $userName = $('.userName');
+    $photoUser.attr('src', localStorage.photoURL);
+    $userName.text(localStorage.displayName);
 
     $btnPost.attr('disabled', true);
     $btnPost.removeClass('btn-grad');
