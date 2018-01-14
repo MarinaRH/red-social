@@ -235,7 +235,7 @@ nav {
 }
 
 .content-profile {
-  padding: 10px 80px 0 80px;
+  padding: 75px 30px;
 }
 
 .nav-profile {
@@ -254,8 +254,12 @@ nav {
   font-weight: 900;
 }
 
-@media (max-width: 768px) {
+/*@media (max-width: 768px) {
   .content-profile {
     padding: 320px 24px 0 24px;
   }
+}*/
+
+.size {
+  width: 250px;
 }
