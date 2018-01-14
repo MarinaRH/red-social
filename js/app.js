@@ -149,7 +149,6 @@ $(document).ready(function() {
         console.log(providerData);
 
         $photoProfile.attr('src', photoURL);
-        //$coments.attr('src', photoURL);
         $comentsPhoto.attr('src', photoURL);
         $nameUsers.text(displayName);
         $usersComent.text(displayName);
@@ -208,7 +207,7 @@ $(document).ready(function() {
   $('#friend-active').on('click',function(e){
     $('.actives').toggleClass('hide');
   })
-  
+
   // habilitar boton para publicar
   var $btnPost = $('#btn-text');
   var $newPost = $('#new-text');
