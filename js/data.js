@@ -1,0 +1,50 @@
+var data = [{
+
+  'producto': 'jeans',
+  'nameTienda': 'Zara',
+  'image': 'http://1.bp.blogspot.com/-fsVC8I2J5kM/VSTusVvaXEI/AAAAAAAAqGM/E2GSOK2iPCE/s1600/Los%2Bjeans%2Brasgados%2Best%C3%A1n%2Bde%2Bvuelta%2Bff.jpg',
+  'local': 'assets/images/publicaacion2.jpg',
+  'address': 'Maria Auxiliadora 453 - La victoria',
+  'price': '$30',
+},
+{
+  'name': 'jeans',
+  'nameTienda': 'Gamarrita',
+  'image': 'https://ae01.alicdn.com/kf/HTB1eMFVIpXXXXXrXpXXq6xXFXXX4/2015-nueva-primavera-verano-mujer-Jean-con-diamantes-rasgados-agujero-Jeans-alta-calidad-para-la-mujer.jpg',
+  'local': 'https://prendelis.files.wordpress.com/2015/09/americaneaglechile1.jpg',
+  'address': 'Av. Villarán 759 - Villa Maria',
+  'price': ' $100',
+},
+{
+  'name': 'jeans',
+  'nameTienda': 'Gamarrita',
+  'image': 'https://ae01.alicdn.com/kf/HTB1eMFVIpXXXXXrXpXXq6xXFXXX4/2015-nueva-primavera-verano-mujer-Jean-con-diamantes-rasgados-agujero-Jeans-alta-calidad-para-la-mujer.jpg',
+  'local': 'https://prendelis.files.wordpress.com/2015/09/americaneaglechile1.jpg',
+  'address': 'Av. Villarán 759 - Villa Maria',
+  'price': ' $100',
+},
+{
+  'name': 'jeans',
+  'nameTienda': 'Gamarrita',
+  'image': 'https://ae01.alicdn.com/kf/HTB1eMFVIpXXXXXrXpXXq6xXFXXX4/2015-nueva-primavera-verano-mujer-Jean-con-diamantes-rasgados-agujero-Jeans-alta-calidad-para-la-mujer.jpg',
+  'local': 'https://prendelis.files.wordpress.com/2015/09/americaneaglechile1.jpg',
+  'address': 'Av. Villarán 759 - Villa Maria',
+  'price': ' $100',
+},
+{
+  'name': 'jeans',
+  'nameTienda': 'Gamarrita',
+  'image': 'https://ae01.alicdn.com/kf/HTB1eMFVIpXXXXXrXpXXq6xXFXXX4/2015-nueva-primavera-verano-mujer-Jean-con-diamantes-rasgados-agujero-Jeans-alta-calidad-para-la-mujer.jpg',
+  'local': 'https://prendelis.files.wordpress.com/2015/09/americaneaglechile1.jpg',
+  'address': 'Av. Villarán 759 - Villa Maria',
+  'price': ' $100',
+},
+{
+  'name': 'jeans',
+  'nameTienda': 'Gamarrita',
+  'image': 'https://ae01.alicdn.com/kf/HTB1eMFVIpXXXXXrXpXXq6xXFXXX4/2015-nueva-primavera-verano-mujer-Jean-con-diamantes-rasgados-agujero-Jeans-alta-calidad-para-la-mujer.jpg',
+  'local': 'https://prendelis.files.wordpress.com/2015/09/americaneaglechile1.jpg',
+  'address': 'Av. Villarán 759 - Villa Maria',
+  'price': ' $100',
+}
+];
