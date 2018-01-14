@@ -219,8 +219,7 @@ $(document).ready(function() {
   // funcion para agregar publicaciones
   var ShowPublic = function(e){
   $btnPost.on('click', function(e) {
-    debugger
-    //  observer();
+
     var texto = $newPost.val();
     $newPost.val('');
 
@@ -270,9 +269,6 @@ $(document).ready(function() {
 
   reader.readAsDataURL(this.files[0]);
 
-
-
-
   });
 
   // comentar las publicaciones
@@ -296,6 +292,16 @@ $(document).ready(function() {
     $('#contador').html(cont +' '+'like');
     cont++;
   });
+
+
+    
+
+
+
+
+
+
+
 
 
 });
