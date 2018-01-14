@@ -261,5 +261,7 @@ nav {
 }*/
 
 .size {
+  transform: translateX(25%);
   width: 250px;
+
 }
