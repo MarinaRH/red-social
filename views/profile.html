@@ -8,14 +8,15 @@
   <link type="text/css" rel="stylesheet" href="../vendors/materialize/css/materialize.min.css"/>
   <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <!-- hoja de stylo css -->
   <link rel="stylesheet" href="../css/flexboxgrid.min.css">
   <link rel="stylesheet" type="text/css" href="../css/main.css">
   <title>E.GO</title>
 </head>
 <body class="bg-color">
-  <header class="fixed">
+  <header>
     <div class="portada">
-      <img class="portada-img" src="../assets/images/portada.jpg" alt="">
+      <!-- <img class="portada-img" src="../assets/images/portada.jpg" alt=""> -->
     </div>
     <nav class="nav-profile">
       <div class="nav-wrapper gradient">
@@ -24,19 +25,28 @@
         </ul>
       </div>
     </nav>
-    <div>
-      <img alt="perfil" class="comentsPhoto profile">
-    </div>
+    <!-- <div>
+      <img id="coments" alt="" class="profile">
+    </div> -->
   </header>
   <main class="content-profile">
     <div class="row">
-      <div class="col s12 m4 border-post n-profile">
-        <div>
-          <p class="usersComent text-name"></p>
-          <div class="col s12 m12 divider"></div>
-          <p><span><i class="fa fa-map-marker grey-text "></i></span>&nbsp&nbsp&nbsp&nbsp&nbsp Lima-Peru <br> <span><i class="fa fa-star-half-o  grey-text" aria-hidden="true"></i></span>&nbsp&nbsp&nbsp&nbsp 144 Seguidores <br> <span><i class="fa fa-envelope-o grey-text" aria-hidden="true"></i></span>&nbsp&nbsp&nbsp&nbsp&nbsp<a href="">web.facebook.com/lmar.rrhh/</a> </p>
+      <div class="col s12 m4">
+        <div class="card-panel grey lighten-5 z-depth-1">
+          <div class="row valign-wrapper">
+            <div class="center-align">
+              <p class="usersComent text-name"></p>
+              <img class="size comentsPhoto circle responsive-img">
+            </div>
+            <div class="col s10">
+            <p><span><i class="fa fa-map-marker grey-text "></i></span>&nbsp&nbsp&nbsp&nbsp&nbsp Lima-Peru <br> <span><i class="fa fa-star-half-o  grey-text" aria-hidden="true"></i></span>&nbsp&nbsp&nbsp&nbsp Seguidores <br> <span><i class="fa fa-envelope-o grey-text" aria-hidden="true"></i></span>&nbsp&nbsp&nbsp&nbsp&nbsp<a href="">web.facebook.com/lmar.rrhh/</a> </p>
+          </div>
         </div>
       </div>
+    </div>
+
+
+
       <div class="col s12 m8">
         <div class="border-post">
           <form id="new-publicacion">
@@ -45,56 +55,57 @@
           <div class="post">
             <button id="btn-text"  type="submit" class="btn right" disabled>Post</button>
             <ul>
-              <li class="inline" id='file-select'><a href="#"><i class="fa fa-camera icon "></i> </a></li>
+              <li class="inline"><a href="#"><i class="fa fa-map-marker icon"></i></a></li>
+              <li class="modal-trigger inline" href="#modal1"><a href="#"><i class="fa fa-camera icon "></i> </a></li>
               <li class="inline"><a href="#"><i class="fa fa-film icon"></i></a></li>
+              <li class="inline"><a href="#"><i class="fa fa-microphone icon"></i></a></li>
             </ul>
           </div>
         </div>
-        <!-- agregar publicacion -->
-        <div id="publicacion">
+        <div>
+          <div id="publicacion">
+          </div>
+          <div class="col s12 m12 white">
+            <input id="input-comment" placeholder="Add a comment.." type="text" class="hide">
+          </div>
         </div>
-        <!-- publicando imagenes -->
-        <input id='file' name='file' type='file' class="hide">
-        <!-- fin de imagen publicada -->
-        <div class="col s12 m12 border-post">
+        <div>
           <div id="public-header" class="col s12 m12 ">
-            <br>
             <div class="col s2 m2 ">
-              <img alt="" class="comentsPhoto img-perfil">
+              <img src="../assets/images/etnika.png" alt="" class=" img-perfil">
             </div>
             <div class="col s10 m10">E T N I K A<br>
               <span class="grey-text">Publicado a las 12:36am</span>
             </div>
             <div class="col s12 m12 divider"></div>
           </div>
-          <div id="public-body" class="col s12 m12 ">
+          <div id="public-body" class="col s12 m12 white">
             <div class="text-public center">
               <img src="../assets/images/publicacion1.jpg" class="img-publicacion" alt="">
             </div>
           </div>
-          <div class="col s12 m12 group-icon">
+          <div class="col s12 m12 group-icon white">
             <a><i class="fa fa-thumbs-o-up icon-public" id="icon-like"></i></a>
             <a href="#"><i class="fa fa-edit icon-public"></i></a>
             <a><i class="fa fa-share icon-public"></i></a>
             <p class="right grey-text" id="contador"></p>
             <div class="col s12 m12 divider"></div>
             <br><br>
-            <div id="add-comment" class="col s12 m12">
+            <div id="add-com" class="col s12 m12">
               <div class="col s1 m1">
                 <img src="../assets/images/perfil3.jpg" alt="" class="img-comment">
               </div>
               <p class="col s11 m11 ">Oww la ruta de la ropa usada! <span><img src="../assets/images/emogi.png" alt="emogi" class="img-emogi"></span><span  class="right grey-text">publicado : 13:01</span></p>
             </div>
             <div class="col s12 m12">
-              <input id="input-comment" placeholder="Add a comment.." type="text">
+              <input id="input-com" placeholder="Add a comment.." type="text">
             </div>
           </div>
         </div>
-        <div class="col s12 m12 border-post">
+        <div>
           <div id="public-header" class="col s12 m12 ">
-            <br>
             <div class="col s2 m2 ">
-              <img alt="" class="comentsPhoto img-perfil">
+              <img src="../assets/images/zaris.jpg" alt="" class=" img-perfil">
             </div>
             <div class="col s10 m10">Z'ARIS<br>
               <span class="grey-text">Publicado a las 16:36am</span>
@@ -102,7 +113,10 @@
             <div class="col s12 m12 divider"></div>
           </div>
           <div id="public-body" class="col s12 m12 white">
-            <p>Aprovecha los Desc% en J U S T I C E de verano que no te puedes perder .....aprovchaa yaaaa......</p>
+            <p>Aprovecha los Desc% en J U S T I C E</p>
+            <div class="text-public center">
+              <img src="../assets/images/publicaacion2.jpg" class="img-publicacion" alt="">
+            </div>
           </div>
           <div class="col s12 m12 group-icon white">
             <a><i class="fa fa-thumbs-o-up icon-public" id="icon-like"></i></a>
@@ -111,55 +125,24 @@
             <p class="right grey" id="contador"></p>
             <div class="col s12 m12 divider"></div>
             <br><br>
-            <div id="add-comment" class="col s12 m12">
+            <div id="add-com" class="col s12 m12">
               <div class="col s1 m1">
                 <img src="../assets/images/perfil1.jpg" alt="" class="img-comment">
               </div>
               <p class="col s11 m11 ">Buenas ofertas..!! <span><img src="../assets/images/emogi.png" alt="emogi" class="img-emogi"></span><span  class="right grey-text">publicado : 13:01</span></p>
             </div>
-          </div>
-        </div>
-        <div class="col s12 m12 border-post">
-          <div id="public-header" class="col s12 m12 ">
-            <br>
-            <div class="col s2 m2 ">
-              <img alt="" class="comentsPhoto img-perfil">
-            </div>
-            <div class="col s10 m10">Z'ARIS<br>
-              <span class="grey-text">Publicado a las 16:36am</span>
-            </div>
-            <div class="col s12 m12 divider"></div>
-          </div>
-          <div id="public-body" class="col s12 m12 ">
-            <p>Aprovecha los Desc% en J U S T I C E</p>
-            <div class="text-public center">
-              <img src="../assets/images/publicaacion2.jpg" class="img-publicacion" alt="">
-            </div>
-          </div>
-          <div class="col s12 m12 group-icon ">
-            <a><i class="fa fa-thumbs-o-up icon-public" id="icon-like"></i></a>
-            <a href="#"><i class="fa fa-edit icon-public"></i></a>
-            <a><i class="fa fa-share icon-public"></i></a>
-            <p class="right grey" id="contador"></p>
-            <div class="col s12 m12 divider"></div>
-            <br><br>
-            <div id="add-comment" class="col s12 m12">
-              <div class="col s1 m1">
-                <img src="../assets/images/perfil1.jpg" alt="" class="img-comment">
-              </div>
-              <p class="col s11 m11 ">Buenas ofertas..!! <span><img src="../assets/images/emogi.png" alt="emogi" class="img-emogi"></span><span  class="right grey-text">publicado : 13:01</span></p>
+            <div class="col s12 m12">
+              <input id="input-com" placeholder="Add a comment.." type="text">
             </div>
           </div>
         </div>
       </div>
     </div>
   </main>
+
   <script src="https://www.gstatic.com/firebasejs/4.8.1/firebase.js"></script>
   <script type="text/javascript" src="../vendors/jquery/jquery-3.2.1.min.js"></script>
   <script type="text/javascript" src="../vendors/materialize/js/materialize.min.js"></script>
-  <script type="text/javascript" src="../js/profile.js"></script>
+  <script type="text/javascript" src="../js/app.js"></script>
 </body>
 </html>
-
-
-
