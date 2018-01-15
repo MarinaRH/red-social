@@ -309,7 +309,7 @@ $(document).ready(function() {
       $store.append($text);
 
       var $img = $('<img/>');
-      $img.addClass('responsive-img');
+      $img.addClass('responsive-img cont-img');
       $img.attr('src', data[i].image);
       $store.append($img);
     }
@@ -331,6 +331,14 @@ $(document).ready(function() {
      }
    });
  })
+
+ var $collection = $('.collection');
+ $collection.on('click', showProfileStore);
+
+  function showProfileStore() {
+    window.location.href = '../views/store.html';
+
+  }
 
 
 
