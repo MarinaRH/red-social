@@ -16,24 +16,22 @@
 </head>
 <body class="bg-color">
   <header>
-    <div class="portada">
-      <!-- <img class="portada-img" src="../assets/images/portada.jpg" alt=""> -->
-    </div>
-    <nav class="nav-profile">
-      <div class="nav-wrapper gradient">
-        <ul class="right">
+    <nav>
+      <div class="nav-wrapper">
+        <img src="../assets/images/logo.png" alt=""class="brand-logo left img-logo">
+        <ul class="right hide-on-med-and-down">
           <li><a href="home.html" ><i class="fa fa-bars icon white-text"></i>&nbsp;Home</a></li>
+          <li><a href="#"><i class="fa fa-comments icon white-text"></i></a></li>
+          <li><a id="friend-active"><i class="fa fa-user icon white-text"></i></a></li>
+          <li><a href="iniciarSesion.html">Close</a></li>
         </ul>
       </div>
     </nav>
-    <!-- <div>
-      <img id="coments" alt="" class="profile">
-    </div> -->
   </header>
   <main class="content-profile">
     <div class="row">
       <div class="col s12 m4">
-        <div class="card-panel grey lighten-5 z-depth-1">
+        <div class="mrg card-panel grey lighten-5 z-depth-1">
           <div class="row valign-wrapper">
             <div class="center-align">
               <p class="usersComent text-name"></p>
@@ -47,7 +45,7 @@
     </div>
 
 
-      <div class="col s12 m5">
+      <div class="col s12 m5 mrg">
         <div class="border-post">
           <form id="new-publicacion">
             <textarea id="new-text" class="post-text" placeholder="Whats in your mind today?"></textarea>
@@ -137,15 +135,13 @@
           </div>
         </div>
       </div>
-
-      <div id="container-store" class="col m3">
+      <div id="container-store" class="col m3 mrg">
         <div class="input-field">
-            <i class="material-icons prefix">search</i>
-            <input type="text" id="filtro">
-            <label>Ingresa tu busqueda</label>
-          </div>
-
+          <i class="material-icons prefix">search</i>
+          <input type="text" id="filtro">
+          <label>Ingresa tu busqueda</label>
         </div>
+      </div>
 
       </div>
     </div>
