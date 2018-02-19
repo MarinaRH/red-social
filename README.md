@@ -6,6 +6,7 @@
 
 ![view4](https://user-images.githubusercontent.com/32303587/36365467-af49ddea-1517-11e8-8bca-07b36b9636bf.png)
 
+Desarrollado para [Laboratoria](http://laboratoria.la)
 
 ## Flujo de la aplicación
 
