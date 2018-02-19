@@ -1,13 +1,11 @@
 # E.GO
 
-* **Track:** _Common Core_
-* **Curso:** _Crea tu propia red social_
-* **Unidad:** _Agiliza tu desarrollo_
-
 ***
-## Objetivos
 
-Tu talento no tiene límites, pero a veces su alcance sí. E.GO conecta a Emprendedores de todo el planeta. Comparte tus ideas o proyectos, encuentra proveedores y clientes, aprende nuevas habilidades y convierte tus sueños en realidad. Tu talento no tiene límites, hazlo llegar a todo el mundo!!.
+ E.GO una red social que conecta Emprendedores de todo el planeta con usuarios y posibles clientes que tienen un fin en común. Emprendedores que comparten sus ideas o proyectos donde encuentra proveedores o clientes que buscan un producto.
+
+![view4](https://user-images.githubusercontent.com/32303587/36365467-af49ddea-1517-11e8-8bca-07b36b9636bf.png)
+
 
 ## Flujo de la aplicación
 
@@ -22,12 +20,6 @@ Para éllo hay algunos puntos básicos con las que cuenta nuestra red social E.G
 - Ser mobile friendly.
 - Poder likear publicaciones.
 
-![splash](assets/images/view1.png)
-![splash](assets/images/view2.png)
-![splash](assets/images/view3.png)
-![splash](assets/images/view4.png)
-![splash](assets/images/view5.png)
-![splash](assets/images/view6.png)
 ## Desarrollado con:
 
 - `HTML5` 
@@ -36,6 +28,6 @@ Para éllo hay algunos puntos básicos con las que cuenta nuestra red social E.G
 - `Materialize`
 - `FireBase`
 
-##  Créditos
+##  Colaboraciones:
 * [Wendy Tamara ]
 * [Marina Rodriguez]
