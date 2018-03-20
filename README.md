@@ -1,8 +1,6 @@
 # E.GO
 
-***
-
- E.GO una red social que conecta Emprendedores de todo el planeta con usuarios y posibles clientes que tienen un fin en común. Emprendedores que comparten sus ideas o proyectos donde encuentra proveedores o clientes que buscan un producto.
+ E.GO una red social que conecta emprendedores del rubro textil con usuarios que son posibles clientes. Esta plataforma funciona como una gran ventana para los emprendedores que necesitan expandir su bolsa de clientes y para usuarios que necesitan tener muchas opciones de sus productos en tiempo real.
 
 ![view4](https://user-images.githubusercontent.com/32303587/36365467-af49ddea-1517-11e8-8bca-07b36b9636bf.png)
 
