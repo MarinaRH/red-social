@@ -1,10 +1,10 @@
 # E.GO
 
- E.GO una red social que conecta emprendedores del rubro textil con usuarios que son posibles clientes. Esta plataforma funciona como una gran ventana para los emprendedores que necesitan expandir su bolsa de clientes y para usuarios que necesitan tener muchas opciones de sus productos en tiempo real.
+ E.GO una red social que conecta emprendedores del rubro textil con usuarios que son posibles clientes. Esta plataforma funciona como una gran ventana para los emprendedores que necesitan expandir su bolsa de clientes y para usuarios que necesitan tener muchas opciones de productos en tiempo real.
 
 ![view4](https://user-images.githubusercontent.com/32303587/36365467-af49ddea-1517-11e8-8bca-07b36b9636bf.png)
 
-Desarrollado para [Laboratoria](http://laboratoria.la)
+ ## Desarrollado para [Laboratoria](http://laboratoria.la)
 
 ## Flujo de la aplicación
 
